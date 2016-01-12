@@ -1,0 +1,41 @@
+\documentclass[a4j,12pt]{jreport}
+\usepackage{graphicx}
+\usepackage{algpseudocode}
+
+\renewcommand{\baselinestretch}{1.2}\selectfont
+
+\makeatletter
+\renewcommand{\thefigure}{%
+\arabic{figure}}
+\renewcommand{\thetable}{%
+\arabic{table}}
+\renewcommand{\theequation}{%
+\arabic{equation}}
+\makeatother
+
+\begin{document}
+
+\input{title}    % ------------タイトル-------------
+\input{abstract} % ------------概要-------------
+
+% ------------目次・図目次・表目次 開始-------------
+\newpage
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+\listoftables
+
+% ------------目次・図目次・表目次 終了-------------
+\newpage
+\pagenumbering{arabic}
+
+\input{1}
+\input{2}
+\input{3}
+\input{4}
+\input{5}
+\input{6}
+\input{etc}   % ------------謝辞・学外発表・参考文献-------------
+
+\end{document}
