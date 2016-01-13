@@ -25,7 +25,7 @@ git checkout templates
 # 今年向けに編集してコミット
 git commit
 
-# タグ付け
-git tag template/12fi
+# ブランチ作成
+git checkout -b template/12fi
 
 ```
