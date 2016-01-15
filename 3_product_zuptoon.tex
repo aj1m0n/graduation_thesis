@@ -37,6 +37,22 @@
 \myfig{qr.png}{認証QRコード}{qr}
 \myfigdouble{con.jpg}{help.png}{コントローラ, コントローラの説明}{controller}
 
+\subsection{ゲームシステム}
+ゲームの内容について説明する．
+
+ゲームは平面のシューティングゲームを作成した．ステージ上をプレイヤー(\figref{player})が移動できて壁で構成される部分はオブジェクトが通過できない(\figref{stage})．
+
+プレイヤーはHP(Hit Point)，MP(Hit Point) を持っていて，ショット攻撃にMPを消費し，消費したMPはマップに散らばり取得するとMPが回復するという特徴のルールを加えた．
+
+プレイヤーのアクションは移動とショット攻撃とダッシュの3つが行える．コントローラ右でショット，コントローラ左でショット攻撃，シェイクでダッシュが出来る．
+
+プレイヤー数に対する処理速度の考察を行った.作成したゲームについて接続人数とFPSを取って回帰分析を行った\figref{graph}.
+7台の接続時の28.28fpsで若干表示がカクついている状態であった
+
+\myfighalf{items.png}{プレイヤー・ショット}{player}
+\myfig{game_play.png}{ゲームプレイ画面}{stage}
+\myfig{g.png}{FPSグラフ}{graph}
+
 %%%%%%		next page 				%%%%%%
 \newpage
 \section{システム構成}
