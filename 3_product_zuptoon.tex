@@ -5,43 +5,65 @@
 %\setcounter{subsubsection}{0}
 
 \begin{center}
-\vspace{0.5cm}
-\huge{\bf 第3章}
-\par
-\vspace{1cm}
-\hrulefill
-\par
-\vspace{1cm}
-\huge{\bf 即興的及び人数チームプレイが可能なブラウザネットワーキングゲーム基盤}
-\par
-\vspace{0.5cm}
-\hrulefill
-\vspace{1cm}
-\par
+    \vspace{0.5cm}
+    \huge{\bf 第3章}
+    \par
+    \vspace{1cm}
+    \hrulefill
+    \par
+    \vspace{1cm}
+    \huge{\bf 即興的及び人数チームプレイが可能なブラウザネットワーキングゲーム基盤}
+    \par
+    \vspace{0.5cm}
+    \hrulefill
+    \vspace{1cm}
+    \par
 
 %\normalsize
-\begin{flushleft}
-\large{{\bf　本性では, 作成した即興的な多人数プレイが可能なブラウザネットワーキングゲームについて述べる．}}
-\end{flushleft}
+    \begin{flushleft}
+        \large{{\bf　本性では, 作成した即興的な多人数プレイが可能なブラウザネットワーキングゲームについて述べる．}}
+    \end{flushleft}
 \end{center}
 
-\addcontentsline{toc}{chapter}{\protect\numberline{第3章}{即興的及び人数チームプレイが可能なブラウザネットワーキングゲーム機版築}}
+\addcontentsline{toc}{chapter}{\protect\numberline{第3章}{即興的及び人数チームプレイが可能なブラウザネットワーキングゲーム基盤}}
 
 \newpage
 \section{システム概要}
-TODO:\\
+ゲームプラットフォームの作成とともに一例として，多人数対応のブラウザシューティングゲームを作成をした(\figref{play})．サーバーを起動してモニタとなる端末からブラウザでゲームページへアクセスすると(\figref{qr})のようにQRコードが表示される．同じ画面で遊ぶプレイヤーはスマートフォン端末でQRコード読み取りをするとコントローラ用のURLへアクセスすることができプレイに参加が出来る．
 
+コントローラはスマートフォンを横持ちで，シェイク(スマートフォンを振る)動作なども入力としてゲームに入れた(\figref{controller})．socket通信を用いることでスマホで即時参加が可能でリアルタイムにプレイヤーの操作が出来る．
 
-% ゲームプラットフォームの作成とともに一例として，多人数対応のブラウザシューティングゲームを作成をした(\figref{fig:play})．サーバーを起動してモニタとなる端末からブラウザでゲームページへアクセスすると(\figref{fig:qr})のようにQRコードが表示される．同じ画面で遊ぶプレイヤーはスマートフォン端末でQRコード読み取りをするとコントローラ用のURLへアクセスすることができプレイに参加が出来る．
-% 
-% コントローラはスマートフォンを横持ちで，シェイク(スマートフォンを振る)動作なども入力としてゲームに入れた(\figref{fig:controller})．socket通信を用いることでスマホで即時参加が可能でリアルタイムにプレイヤーの操作が出来る．
+\myfig{game_main.jpg}{プレイの様子}{play}
+\myfig{qr.png}{認証QRコード}{qr}
+\myfigdouble{con.jpg}{help.png}{コントローラ, コントローラの説明}{controller}
 
-\myfig{node_con.png}{コントローラ接続時の通信}{connect_sub}
+%%%%%%		next page 				%%%%%%
+\newpage
+\section{システム構成}
+\subsection{通信の流れ}
+まずディスプレイとなる端末からメインページ(ドキュメントルート/)にアクセスする(\figref{connect_top} - 1，2)．レスポンス時にsocket のコネクションを確立する(\figref{connect_top} - 3，4)．
+
+その後，コントローラとして使う端末からチーム選択ページ(ドキュメントルート/con)にアクセスする(\figref{connect_sub} - 1，2)．チームの選択によりコントローラページ(ドキュメントルート/con?team=[num])に飛び，socket コネクションの確立(\figref{connect_sub} - 3，4, 5, 6)とともに，ディスプレイ端末へプレイヤー追加のイベントを送信も行う(\figref{connect_sub} - 7)．
+
+ゲーム時の通信は(\figref{node_game})のようにコントローラの入力をsocket を通してメインページを開いているクライアントへ送信し，プレイヤーのアクションへと同期している．
+
+\myfighalf{node_top.png}{メインページ接続時の通信}{connect_top}
+\myfighalf{node_con.png}{コントローラ接続時の通信}{connect_sub}
+\myfighalf{node_game.png}{ゲーム時のコントロールクエリの同期}{node_game}
 
 %%%%%%		next page 				%%%%%%
 \newpage
 
 \section{本章のまとめ}
-TODO: 本章では，群馬県館林市に設置したTScan:微気象センサネットワーク構築について述べ，TScanで使用しているリーフセンサノード，アクセスポイントセンサノード，シンクシステム，TScanサーバについて仕様を述べた．また，各センサデバイスにおける電源確保などの設置上の制約を明らかにした．次章では，故障解析に使用するニューラルネットワークならびに，TScan:微気象センサネットワークにおける故障解析手法について述べる．
+% 限界
+今回作ったゲームは4人で接続で20秒に一度ほどゲームのフリーズが発生，8人での接続だと常時カクつきが見られた．ソケットで扱うデータが単純であれば性能の向上ができると考えられる．
+
+% 解明点
+即興性の面での評価は，実際に使ってプレイまでの準備がスムーズに行えた．ローカルネットワーク内の場合はアクセスポイントの選択が必要になる場合もあるが大した手間では無いと考えられる．
+
+% 意義
+
+% 展望
+このシステムの応用としては，サーバーサイドの汎用化，ライブラリ化が望める．RaspberryPI への移植も行えれば Wifi を吹くことでネットワーク環境のない被災地などでもモバイル端末への通信の可能性も広がると思われる．
 
 \newpage

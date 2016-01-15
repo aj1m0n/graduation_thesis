@@ -1,5 +1,5 @@
 
-\newcommand{\myfig}[4][width=7cm]{%
+\newcommand{\myfig}[4][width=14cm]{%
   \begin{figure}[h]
     \centering
     \includegraphics[#1]{images/#2}
@@ -8,3 +8,24 @@
   \end{figure}
 }
 
+\newcommand{\myfighalf}[4][width=7cm]{%
+  \begin{figure}[h]
+    \centering
+    \includegraphics[#1]{images/#2}
+    \caption{#3}
+    \label{fig:#4}
+  \end{figure}
+}
+
+\newcommand{\myfigdouble}[5][width=7cm]{
+  \begin{figure}[h]
+    \centering
+    \includegraphics[#1]{images/#2}
+    \includegraphics[#1]{images/#3}
+    \caption{#4}
+    \label{fig:#5}
+  \end{figure}
+}
+
+\newcommand\figref[1]{図~\ref{fig:#1}}
+\newcommand\tabref[1]{表~\ref{tab:#1}}
