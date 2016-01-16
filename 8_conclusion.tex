@@ -1,33 +1,12 @@
-%%%%%%		next page 				%%%%%%
-\newpage
-\setcounter{chapter}{6}
-\setcounter{section}{0}
-%\setcounter{subsubsection}{0}
-
-\begin{center}	
-\vspace{0.5cm}
-\huge{\bf 第6章}
-\par
-\vspace{1cm}
-\hrulefill
-\par
-\vspace{1cm}
-\huge{\bf 結論}
-\par
-\vspace{0.5cm}
-\hrulefill
-\vspace{1cm}
-\par
-
-%\normalsize
-\begin{flushleft}
-\large{{\bf　本章では，本研究で得られた結果をもとに，結論を述べる．}}
-\end{flushleft}
-\end{center}
-
-\addcontentsline{toc}{chapter}{\protect\numberline{第6章}{結論}}
+%%%%%%%%%%%% ------------ chapter header ------------  %%%%%%%%%%%%
+\chapterhead
+% chapter number
+{8}
+% chapter title
+{結論}
+% chapter abst
+{本章では，本研究で得られた結果をもとに，結論を述べる．}
 %%%%%%%%%%%% ------------ next page ------------  %%%%%%%%%%%%
-\newpage
 
 \section{まとめ}
 本研究では，広域無線マルチホップセンサネットワークの構築例として，TScan:微気象センサネットワークを報告し，センサネットワークの長期間運用するための課題を述べた．また，センサノード長期運用における課題を解決するため，ニューラルネットワークを用いてセンサデバイスやセンサネットワークの故障解析を行った．ニューラルネットワークの教師データとして，TScan:微気象センサネットワークで取得したセンシングデータを使用し，バックプロパゲーション学習させることにより，長期稼働を行っているセンサネットワークに特化した故障解析が可能になる．学習済みの故障解析ニューラルネットワークを使用し，検証実験を行い，センサ部の故障や停電・バッテリ切れを高精度で解析することが可能であることが示された．ニューラルネットワークの故障解析には，次のような入力データが故障解析結果に大きな影響を与えることがわかった．

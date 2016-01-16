@@ -29,3 +29,34 @@
 
 \newcommand\figref[1]{図~\ref{fig:#1}}
 \newcommand\tabref[1]{表~\ref{tab:#1}}
+
+
+\newcommand{\chapterhead}[3]{
+    \clearpage
+    \setcounter{chapter}{#1}
+    \setcounter{section}{0}
+
+    \begin{center}
+        \vspace{0.5cm}
+        \huge{\bf 第#1章}
+        \par
+        \vspace{1cm}
+        \hrulefill
+        \par
+        \vspace{1cm}
+        \huge{\bf　#2}
+        \par
+        \vspace{0.5cm}
+        \hrulefill
+        \vspace{1cm}
+        \par
+
+        %\normalsize
+        \begin{flushleft}
+            \large{{\bf #3}}
+        \end{flushleft}
+    \end{center}
+
+    \addcontentsline{toc}{chapter}{\protect\numberline{第#1章}{#2}}
+    \clearpage
+}
