@@ -2,7 +2,7 @@
 \chapterhead
 % chapter number, title
 {3}{位置情報付きツイート解析による経路・イベント検知と可視化}
-% chapter abst
+% chapter abstraction
 {本章では，位置情報付きツイートに着目しイベント参加者と思われる人の移動経路, イベント検知と可視化について述べる．}
 
 %%%%%%%%%%%% ------------ next page ------------  %%%%%%%%%%%%
@@ -12,32 +12,51 @@
 また，ツイート内容と位置情報からクラスタリングしイベントの予測と可視化をするWebアプリケーションに述べる．
 
 \subsection{移動経路可視化}
- 研究のサンプルとして2014年10月18日に行われた藤沢市の花火大会からツイートを収集し移動経路の可視化を行った
-* イベント参加者と思われるユーザ: 半径10km以内, + 「花火」「ふじさわ」，主要駅名でのツイート
-* 画像
+研究のサンプルとして2014年10月18日に行われたふじさわ江の島花火大会\cite{webpagefujisawa}からツイートを収集し移動経路の可視化を行った\figref{hanabi_web}
+イベント参加者と思われるユーザとして花火大会当日に半径10km以内でツイートしたユーザ及び「花火」，「ふじさわ」，主要駅名でのツイートを行ったユーザで絞り込んでデータを収集した．
+
+\myfig{hanabi.png}{アプリケーション画面}{hanabi_web}
 
 \subsection{イベント検知}
-* 神田祭り
-* 2015年5月8日〜5月13日
+この研究のサンプルはシステムを開発した周辺の2015年5月8日〜5月13日の間にツイートを収集した．
+ツイートのハッシュタグと緯度, 経度をパラメータにクラスタリングを行いクラスタ毎に色分けをしマップ上に可視化をした．
+管理とマップの閲覧が行えるWebアプリケーションの作成した\figref{event_all}
 
-TODO:
+\myfig{event_all.png}{イベント検知アプリケーション画面}{event_all}
+
 
 %%%%%%%%%%%% ------------ next page ------------  %%%%%%%%%%%%
 \newpage
 
 \section{システム構成}
-\subsection{移動経路可視化}
-\subsubsection{サンプルの取得}
-TODO:
-* TwitterAPI を使用した, キーワード指定, 円形の位置情報指定ができる
-* 同ユーザの前後のツイート
+\subsection{Twitter APIについて}
+\subsubsection{Twitter APIについて}
+本研究のツイート収集には Twitter API を用いた．主に https://api.twitter.com/1.1/search/tweets.json と https://stream.twitter.com/1.1/statuses/filter.json を使用しツイートの収集を行った．ツイートのフィルタリングとしてキーワード指定での過去のツイートの検索や緯度経度と半径で指定した範囲の過去のツイートの取得ができる．また，search/tweets による過去のツイートは1週間前までの制限がある．
 
-TODO:
+\subsection{移動経路可視化}
+\figref{hanabi_sequence}の手順でで解析を行う．
+\myfighalf{hanabi_tweet_sequence.png}{花火ツイート解析の流れ}{hanabi_sequence}
+
+\subsubsection{サンプルの取得}
+ふじさわ江の島花火大会の花火打ち上げ地点から周囲10km圏内に絞って取得した．花火打ち上げ地点として緯度35.307061, 経度139.478704 の地点を中心とした．さらに取得したユーザについて当日前後の17日から19日までのツイートを取得した．\tabref{tweet_count}
+
+\mytable{サンプルツイート数}{tweet_count}{
+    \begin{tabular}{|l|r|} \hline
+        日付 & サンプルツイート数 \\ \hline \hline
+        10月17日 & 5052 \\
+        10月18日 & 26723 \\
+        10月19日 & 20227 \\ \hline
+    \end{tabular}
+}
 
 \subsubsection{可視化Webアプリケーション}
-TODO:
+* 時間帯を明度で表現
+* 同一ユーザをポリラインで結ぶ
 
 \subsection{イベント検知}
+\figref{event_sequence}の手順でで解析を行う．
+\myfighalf{event_tweet_sequence.png}{イベント検知と可視化の流れ}{event_sequence}
+
 \subsubsection{ツイート収集}
 TODO:
 \subsubsection{クラスタリング}
