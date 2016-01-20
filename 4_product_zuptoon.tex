@@ -28,8 +28,9 @@
 プレイヤー数に対する処理速度の考察を行った.作成したゲームについて接続人数とFPSを取って回帰分析を行った\figref{graph}.
 7台の接続時の28.28fpsで若干表示がカクついている状態であった
 
-\myfighalf{items.png}{プレイヤー・ショット}{player}
-\myfighalf{game_play.png}{ゲームプレイ画面}{stage}
+\myfigtwo
+{items.png}{プレイヤー・ショット}{player}
+{game_play.png}{ゲームプレイ画面}{stage}
 \myfighalf{g.png}{FPSグラフ}{graph}
 
 %%%%%%%%%%%% ------------ next page ------------  %%%%%%%%%%%%
@@ -44,9 +45,11 @@ TODO:
 
 ゲーム時の通信は(\figref{node_game})のようにコントローラの入力をsocket を通してメインページを開いているクライアントへ送信し，プレイヤーのアクションへと同期している．
 
-\myfighalf{node_top.png}{メインページ接続時の通信}{connect_top}
-\myfighalf{node_con.png}{コントローラ接続時の通信}{connect_sub}
-\myfighalf{node_game.png}{ゲーム時のコントロールクエリの同期}{node_game}
+\myfigtwo
+{node_top.png}{メインページ接続時の通信}{connect_top}
+{node_con.png}{コントローラ接続時の通信}{connect_sub}
+
+\myfig{node_game.png}{ゲーム時のコントロールクエリの同期}{node_game}
 
 %%%%%%%%%%%% ------------ next page ------------  %%%%%%%%%%%%
 

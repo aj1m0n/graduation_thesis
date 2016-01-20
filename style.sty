@@ -27,6 +27,25 @@
   \end{figure}
 }
 
+\newcommand{\myfigtwo}[6]{
+  \begin{figure}[htbp]
+   \begin{minipage}{0.5\hsize}
+    \begin{center}
+     \includegraphics[width=7cm]{images/#1}
+    \end{center}
+    \caption{#2}
+    \label{fig:#3}
+   \end{minipage}
+   \begin{minipage}{0.5\hsize}
+    \begin{center}
+     \includegraphics[width=7cm]{images/#4}
+    \end{center}
+    \caption{#5}
+    \label{fig:#6}
+   \end{minipage}
+  \end{figure}
+}
+
 \newcommand\figref[1]{(図~\ref{fig:#1})}
 \newcommand\tabref[1]{(表~\ref{tab:#1})}
 

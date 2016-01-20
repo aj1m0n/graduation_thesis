@@ -1,7 +1,8 @@
 %%%%%%%%%%%% ------------ chapter header ------------  %%%%%%%%%%%%
 \chapterhead
 % chapter number, title
-{3}{位置情報付きツイート解析による経路・イベント検知と可視化}
+{3}{位置情報付きツイート解析による\\
+経路・イベント検知と可視化}
 % chapter abstraction
 {本章では，位置情報付きツイートに着目しイベント参加者と思われる人の移動経路, イベント検知と可視化について述べる．}
 
@@ -40,7 +41,7 @@
 \subsubsection{サンプルの取得}
 ふじさわ江の島花火大会の花火打ち上げ地点から周囲10km圏内に絞って取得した．花火打ち上げ地点として緯度35.307061, 経度139.478704 の地点を中心とした．さらに取得したユーザについて当日前後の17日から19日までのツイートを取得した．\tabref{tweet_count}
 
-\mytable{サンプルツイート数}{tweet_count}{
+\mytable{花火-サンプルツイート数}{tweet_count}{
     \begin{tabular}{|l|r|} \hline
         日付 & サンプルツイート数 \\ \hline \hline
         10月17日 & 5052 \\
@@ -58,12 +59,19 @@
 \myfighalf{event_tweet_sequence.png}{イベント検知と可視化の流れ}{event_sequence}
 
 \subsubsection{ツイート収集}
-TODO:
+ツイートは移動経路の可視化と同様に取得した, 今回は東京都内のツイートをサンプルとした\tabref{event_tweet_count}.
+東京都心の緯度を35.673343, 経度を139.710388から100km圏内
+
 \subsubsection{クラスタリング}
 TODO:
 
 \subsubsection{可視化Webアプリケーション}
 TODO:
+
+\subsection{Geo Tweet収集クライアント}
+今回の研究でTweetの収集するに当たり位置情報付きのツイートを API を使用して一括で収集するWebアプリケーションも作成した.\figref{controller_app}
+\myfig{collector_app.png}{Tweet 収集アプリケーションUI}{controller_app}
+
 
 %%%%%%%%%%%% ------------ next page ------------  %%%%%%%%%%%%
 \newpage
