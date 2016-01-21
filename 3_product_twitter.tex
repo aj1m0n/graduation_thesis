@@ -19,7 +19,7 @@
 \myfig{hanabi.png}{アプリケーション画面}{hanabi_web}
 
 \subsection{イベント検知}
-この研究のサンプルはシステムを開発した周辺の2015年5月8日〜5月13日の間にツイートを収集した．
+この研究のサンプルはシステムを開発した周辺の2015年5月9日から5月12日の間にツイートを収集した．
 ツイートのハッシュタグと緯度, 経度をパラメータにクラスタリングを行いクラスタ毎に色分けをしマップ上に可視化をした．
 管理とマップの閲覧が行えるWebアプリケーションの作成した\figref{event_all}
 
@@ -59,17 +59,28 @@
 \myfighalf{event_tweet_sequence.png}{イベント検知と可視化の流れ}{event_sequence}
 
 \subsubsection{ツイート収集}
-ツイートは移動経路の可視化と同様に取得した, 今回は東京都内のツイートをサンプルとした\tabref{event_tweet_count}.
-東京都心の緯度を35.673343, 経度を139.710388から100km圏内
+ツイートは移動経路の可視化と同様に取得した.今回は東京都内のツイートをサンプルとした.東京都心の緯度を35.673343, 経度を139.710388から100km圏内，収集日時はは5月9日〜5月12日の四日間とした．
 
 \subsubsection{クラスタリング}
-TODO:
+* ハッシュタグ・緯度経度 K-means
+* 各日時について以下のクラスタ分類ができた\tabref{event_clusters}
+* 時間帯を含めてK-means を行った結果ばらけた
+
+\mytable{イベント検知 - クラスタ数}{event_clusters}{
+    \begin{tabular}{|l|r|} \hline
+        日付 & クラスタ数 \\ \hline \hline
+        5月09日 & TODO \\
+        5月10日 & TODO \\
+        5月11日 & TODO \\
+        5月12日 & TODO \\ \hline
+    \end{tabular}
+}
 
 \subsubsection{可視化Webアプリケーション}
-TODO:
+* GoogleMapを使用した
 
 \subsection{Geo Tweet収集クライアント}
-今回の研究でTweetを収集するために位置情報付きのツイートを API を使用して一括で収集するWebアプリケーションも作成した.\figref{controller_app}
+今回の研究でTweetを収集するために位置情報付きのツイートを API を使用して一括で収集するWebアプリケーションを作成した.\figref{controller_app}
 \myfig{collector_app.png}{Tweet 収集アプリケーションUI}{controller_app}
 
 
