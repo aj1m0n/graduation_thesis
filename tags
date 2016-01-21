@@ -1,0 +1,46 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Geo Tweet収集クライアント	3_product_twitter.tex	/^\\subsection{Geo Tweet収集クライアント}$/;"	t
+Twitter APIについて	3_product_twitter.tex	/^\\subsection{Twitter APIについて}$/;"	t
+Twitter APIについて	3_product_twitter.tex	/^\\subsubsection{Twitter APIについて}$/;"	u
+Twitterを用いた実世界ローカルイベント検出	2_relevant.tex	/^\\subsection{Twitterを用いた実世界ローカルイベント検出}$/;"	t
+WebSocketを用いたWebブラウザ間P2P通信の実現とその応用に関する研究	2_relevant.tex	/^\\subsection{WebSocketを用いたWebブラウザ間P2P通信の実現とその応用に関する研究}$/;"	t
+まとめ	8_conclusion.tex	/^\\section{まとめ}$/;"	s
+イベントの可視化ページ	7_result.tex	/^\\section{イベントの可視化ページ}$/;"	s
+イベント参加者の移動経路の可視化	7_result.tex	/^\\section{イベント参加者の移動経路の可視化}$/;"	s
+イベント検知	3_product_twitter.tex	/^\\subsection{イベント検知}$/;"	t
+クラスタリング	3_product_twitter.tex	/^\\subsubsection{クラスタリング}$/;"	u
+クラスタリング	_5_product_event.tex	/^\\subsection{クラスタリング}$/;"	t
+ゲームシステム	4_product_zuptoon.tex	/^\\subsection{ゲームシステム}$/;"	t
+サンプルの取得	3_product_twitter.tex	/^\\subsubsection{サンプルの取得}$/;"	u
+システム概要	3_product_twitter.tex	/^\\section{システム概要}$/;"	s
+システム概要	4_product_zuptoon.tex	/^\\section{システム概要}$/;"	s
+システム概要	_5_product_event.tex	/^\\section{システム概要}$/;"	s
+システム構成	3_product_twitter.tex	/^\\section{システム構成}$/;"	s
+システム構成	4_product_zuptoon.tex	/^\\section{システム構成}$/;"	s
+システム構成	_5_product_event.tex	/^\\section{システム構成}$/;"	s
+ツイート収集	3_product_twitter.tex	/^\\subsubsection{ツイート収集}$/;"	u
+ハッシュタグ	_5_product_event.tex	/^\\subsection{ハッシュタグ}$/;"	t
+今後の課題	8_conclusion.tex	/^\\section{今後の課題}$/;"	s
+位置情報付きツイートの収集	_5_product_event.tex	/^\\subsection{位置情報付きツイートの収集}$/;"	t
+即時ネットワーク構築手段	2_relevant.tex	/^\\subsection{即時ネットワーク構築手段}$/;"	t
+即興的及び人数チームプレイが可能なブラウザネットワーキングゲーム基盤	7_result.tex	/^\\section{即興的及び人数チームプレイが可能なブラウザネットワーキングゲーム基盤}$/;"	s
+可視化Webアプリケーション	3_product_twitter.tex	/^\\subsubsection{可視化Webアプリケーション}$/;"	u
+本研究の目的	1_introduction.tex	/^\\section{本研究の目的}$/;"	s
+本章のまとめ	2_relevant.tex	/^\\section{本章のまとめ}$/;"	s
+本章のまとめ	3_product_twitter.tex	/^\\section{本章のまとめ}$/;"	s
+本章のまとめ	4_product_zuptoon.tex	/^\\section{本章のまとめ}$/;"	s
+本章のまとめ	7_result.tex	/^\\section{本章のまとめ}$/;"	s
+本章のまとめ	_5_product_event.tex	/^\\section{本章のまとめ}$/;"	s
+本章のまとめ	_6_product_citywalkersmater.tex	/^\\section{本章のまとめ}$/;"	s
+本論文の構成	1_introduction.tex	/^\\section{本論文の構成}$/;"	s
+概要	_6_product_citywalkersmater.tex	/^\\section{概要}$/;"	s
+移動経路可視化	3_product_twitter.tex	/^\\subsection{移動経路可視化}$/;"	t
+背景	1_introduction.tex	/^\\section{背景}$/;"	s
+解決手法	2_relevant.tex	/^\\section{解決手法}$/;"	s
+通信の流れ	4_product_zuptoon.tex	/^\\subsection{通信の流れ}$/;"	t
+関連研究	2_relevant.tex	/^\\section{関連研究}$/;"	s
