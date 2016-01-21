@@ -2,9 +2,9 @@
 \chapterhead
 % chapter number, title
 {3}{位置情報付きツイート解析による\\
-経路・イベント検知と可視化}
+経路・イベント検出と可視化}
 % chapter abstraction
-{本章では，位置情報付きツイートに着目しイベント参加者と思われる人の移動経路, イベント検知と可視化について述べる．}
+{本章では，位置情報付きツイートに着目しイベント参加者と思われる人の移動経路, イベント検出と可視化について述べる．}
 
 %%%%%%%%%%%% ------------ next page ------------  %%%%%%%%%%%%
 
@@ -18,12 +18,12 @@
 
 \myfig{hanabi.png}{アプリケーション画面}{hanabi_web}
 
-\subsection{イベント検知}
+\subsection{イベント検出}
 この研究のサンプルはシステムを開発した周辺の2015年5月9日から5月12日の間にツイートを収集した．
 ツイートのハッシュタグと緯度, 経度をパラメータにクラスタリングを行いクラスタ毎に色分けをしマップ上に可視化をした．
 管理とマップの閲覧が行えるWebアプリケーションの作成した\figref{event_all}
 
-\myfig{event_all.png}{イベント検知アプリケーション画面}{event_all}
+\myfig{event_all.png}{イベント検出アプリケーション画面}{event_all}
 
 
 %%%%%%%%%%%% ------------ next page ------------  %%%%%%%%%%%%
@@ -54,9 +54,9 @@
 * 時間帯を明度で表現
 * 同一ユーザをポリラインで結ぶ
 
-\subsection{イベント検知}
+\subsection{イベント検出}
 \figref{event_sequence}の手順で解析を行う．
-\myfighalf{event_tweet_sequence.png}{イベント検知と可視化の流れ}{event_sequence}
+\myfighalf{event_tweet_sequence.png}{イベント検出と可視化の流れ}{event_sequence}
 
 \subsubsection{ツイート収集}
 ツイートは移動経路の可視化と同様に取得した.今回は東京都内のツイートをサンプルとした.東京都心の緯度を35.673343, 経度を139.710388から100km圏内，収集日時はは5月9日〜5月12日の四日間とした．
@@ -66,7 +66,7 @@
 * 各日時について以下のクラスタ分類ができた\tabref{event_clusters}
 * 時間帯を含めてK-means を行った結果ばらけた
 
-\mytable{イベント検知 - クラスタ数}{event_clusters}{
+\mytable{イベント検出 - クラスタ数}{event_clusters}{
     \begin{tabular}{|l|r|} \hline
         日付 & クラスタ数 \\ \hline \hline
         5月09日 & 10 \\
@@ -79,7 +79,7 @@
 \subsubsection{可視化Webアプリケーション}
 * GoogleMapを使用した
 
-\mytable{イベント検知 - 5月10日}{event_day10_clusters}{
+\mytable{イベント検出 - 5月10日}{event_day10_clusters}{
     \begin{tabular}{|l|r|} \hline
         日付 & クラスタ数 \\ \hline \hline
         5月09日 & 10 \\
