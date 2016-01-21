@@ -46,6 +46,54 @@
   \end{figure}
 }
 
+\newcommand{\myfigthird}[9]{
+  \begin{figure}[htbp]
+   \begin{minipage}{0.33\hsize}
+    \begin{center}
+     \includegraphics[width=4.6cm]{images/#1}
+    \end{center}
+    \caption{#2}
+    \label{fig:#3}
+   \end{minipage}
+   \begin{minipage}{0.33\hsize}
+    \begin{center}
+     \includegraphics[width=4.6cm]{images/#4}
+    \end{center}
+    \caption{#5}
+    \label{fig:#6}
+   \end{minipage}
+   \begin{minipage}{0.33\hsize}
+    \begin{center}
+     \includegraphics[width=4.6cm]{images/#7}
+    \end{center}
+    \caption{#8}
+    \label{fig:#9}
+   \end{minipage}
+  \end{figure}
+}
+
+\newcommand{\myfigthirdset}[5]{
+  \begin{figure}[htbp]
+   \begin{minipage}{0.32\hsize}
+    \begin{center}
+     \includegraphics[width=4.6cm]{images/#1}
+    \end{center}
+   \end{minipage}
+   \begin{minipage}{0.32\hsize}
+    \begin{center}
+     \includegraphics[width=4.6cm]{images/#2}
+    \end{center}
+   \end{minipage}
+   \begin{minipage}{0.32\hsize}
+    \begin{center}
+     \includegraphics[width=4.6cm]{images/#3}
+    \end{center}
+   \end{minipage}
+   \caption{#4}
+   \label{fig:#5}
+  \end{figure}
+}
+
 \newcommand\figref[1]{(図~\ref{fig:#1})}
 \newcommand\tabref[1]{(表~\ref{tab:#1})}
 
