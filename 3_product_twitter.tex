@@ -13,7 +13,7 @@
 また，ツイート内容と位置情報からクラスタリングしイベントの予測と可視化をするWebアプリケーションに述べる．
 
 \subsection{移動経路可視化}
-研究のサンプルとして2014年10月18日に行われたふじさわ江の島花火大会\cite{webpagefujisawa}からツイートを収集し移動経路の可視化を行った\figref{hanabi_web}
+研究のサンプルとして2014年10月18日に行われたふじさわ江の島花火大会\cite{webpage_fujisawa}からツイートを収集し移動経路の可視化を行った\figref{hanabi_web}
 イベント参加者と思われるユーザとして花火大会当日に半径10km以内でツイートしたユーザ及び「花火」，「ふじさわ」，主要駅名でのツイートを行ったユーザで絞り込んでデータを収集した．
 
 \myfig{hanabi.png}{アプリケーション画面}{hanabi_web}
@@ -69,15 +69,33 @@
 \mytable{イベント検知 - クラスタ数}{event_clusters}{
     \begin{tabular}{|l|r|} \hline
         日付 & クラスタ数 \\ \hline \hline
-        5月09日 & TODO \\
-        5月10日 & TODO \\
-        5月11日 & TODO \\
-        5月12日 & TODO \\ \hline
+        5月09日 & 10 \\
+        5月10日 & 12 \\
+        5月11日 & 7 \\
+        5月12日 & 7 \\ \hline
     \end{tabular}
 }
 
 \subsubsection{可視化Webアプリケーション}
 * GoogleMapを使用した
+
+\mytable{イベント検知 - 5月10日}{event_day10_clusters}{
+    \begin{tabular}{|l|r|} \hline
+        日付 & クラスタ数 \\ \hline \hline
+        5月09日 & 10 \\
+        5月10日 & 12 \\
+        5月11日 & 7 \\
+        5月12日 & 7 \\ \hline
+    \end{tabular}
+}
+\myfig{event_day10.png}{5月10日のプロット結果}{event_day15}
+
+\subsubsection{可視化によって発見できたイベント}
+神田祭 \cite{webpage_kanda} 画像\figref{event_desc_kanda}
+野外音楽フェスティバル 人間交差点 2015 (Twitter ハッシュタグ \#nkfes) \cite{webpage_nkfes} 画像\figref{event_desc_nkfes}
+
+\myfigtwo{event_desc_kanda.png}{神田祭ツイートのプロット}{event_desc_kanda}
+{event_desc_nkfes.png}{nkfesツイートのプロット}{event_desc_nkfes}
 
 \subsection{Geo Tweet収集クライアント}
 今回の研究でTweetを収集するために位置情報付きのツイートを API を使用して一括で収集するWebアプリケーションを作成した.\figref{controller_app}
