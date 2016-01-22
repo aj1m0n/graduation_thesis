@@ -10,7 +10,6 @@
 * - DON
 
 other TODO:
-* Style反映
 * 英語を消す
 * フォント設定
 

@@ -125,7 +125,12 @@
     \end{center}
 
     \addcontentsline{toc}{chapter}{\protect\numberline{第#1章}{#2}}
+    \pagestyle{empty}
     \clearpage
+
+    \pagestyle{fancy}
+    \lhead{}
+    \rhead{第#1章 #2}
 }
 
 \newcommand{\mytable}[3]{
