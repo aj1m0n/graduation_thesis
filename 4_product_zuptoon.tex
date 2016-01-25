@@ -37,7 +37,6 @@
 
 \newpage
 \section{システム構成}
-TODO:
 \subsection{通信の流れ}
 まずディスプレイとなる端末からメインページ(ドキュメントルート/)にアクセスする(\figref{connect_top} - 1，2)．レスポンス時にsocket のコネクションを確立する(\figref{connect_top} - 3，4)．
 
@@ -45,11 +44,9 @@ TODO:
 
 ゲーム時の通信は(\figref{node_game})のようにコントローラの入力をsocket を通してメインページを開いているクライアントへ送信し，プレイヤーのアクションへと同期している．
 
-\myfigtwo
-{node_top.png}{メインページ接続時の通信}{connect_top}
-{node_con.png}{コントローラ接続時の通信}{connect_sub}
-
-\myfig{node_game.png}{ゲーム時のコントロールクエリの同期}{node_game}
+\myfig{node_top.png}{メインページ接続時の通信}{connect_top}
+\myfig[width=12cm]{node_con.png}{コントローラ接続時の通信}{connect_sub}
+\myfig[width=12cm]{node_game.png}{ゲーム時のコントロールクエリの同期}{node_game}
 
 %%%%%%%%%%%% ------------ next page ------------  %%%%%%%%%%%%
 
