@@ -27,21 +27,21 @@
   \end{figure}
 }
 
-\newcommand{\myfigtwo}[6]{
+\newcommand{\myfigtwo}[7][width=7cm]{
   \begin{figure}[htbp]
    \begin{minipage}{0.5\hsize}
     \begin{center}
-     \includegraphics[width=7cm]{images/#1}
+     \includegraphics[#1]{images/#2}
     \end{center}
-    \caption{#2}
-    \label{fig:#3}
+    \caption{#3}
+    \label{fig:#4}
    \end{minipage}
    \begin{minipage}{0.5\hsize}
     \begin{center}
-     \includegraphics[width=7cm]{images/#4}
+      \includegraphics[#1]{images/#5}
     \end{center}
-    \caption{#5}
-    \label{fig:#6}
+    \caption{#6}
+    \label{fig:#7}
    \end{minipage}
   \end{figure}
 }
