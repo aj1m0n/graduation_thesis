@@ -97,21 +97,20 @@
 \newcommand\figref[1]{(図~\ref{fig:#1})}
 \newcommand\tabref[1]{(表~\ref{tab:#1})}
 
-
-\newcommand{\chapterhead}[3]{
+\newcommand{\chapterhead}[2]{
+    \stepcounter{chapter}%
     \clearpage
-    \setcounter{chapter}{#1}
     \setcounter{section}{0}
 
     \begin{center}
         \vspace{0.5cm}
-        \huge{\bf 第#1章}
+        \huge{\bf 第{\thechapter}章}
         \par
         \vspace{1cm}
         \hrulefill
         \par
         \vspace{1cm}
-        \huge{\bf #2}
+        \huge{\bf #1}
         \par
         \vspace{0.5cm}
         \hrulefill
@@ -120,17 +119,17 @@
 
         %\normalsize
         \begin{flushleft}
-            \large{{\bf #3}}
+            \large{{\bf #2}}
         \end{flushleft}
     \end{center}
 
-    \addcontentsline{toc}{chapter}{\protect\numberline{第#1章}{#2}}
+    \addcontentsline{toc}{chapter}{\protect\numberline{第{\thechapter}章}{#1}}
     \pagestyle{empty}
     \clearpage
 
     \pagestyle{fancy}
     \lhead{}
-    \rhead{第#1章 #2}
+    \rhead{第{\thechapter}章 #1}
 }
 
 \newcommand{\mytable}[3]{
