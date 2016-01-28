@@ -1,7 +1,7 @@
 %%%%%%%%%%%% ------------ chapter header ------------  %%%%%%%%%%%%
 \chapterhead
 % chapter number, title
-{4}{即興的及び人数チームプレイが可能なブラウザネットワーキングゲーム基盤}
+{4}{即興的及び人数チームプレイが可能な\\ブラウザネットワーキングゲーム基盤}
 % chapter abst
 {本章では，作成した即興的な多人数プレイが可能なブラウザネットワーキングゲームについて述べる．}
 
@@ -37,6 +37,13 @@
 
 \newpage
 \section{システム構成}
+\subsection{構成図}
+システムの構成は 2つを想定し，オンラインサーバを運用して動かす\figref{systemonline}に示す構成と，サーバを PC で立てることによりローカルネットワークのみでのプレイが出来る\figref{systemoffline}で示す構成がある．
+
+%  サーバ構成
+\myfigtwo{systemonline.png}{システム構成図}{systemonline}
+{systemoffline.png}{システム構成図2}{systemoffline}
+
 \subsection{通信の流れ}
 まずディスプレイとなる端末からメインページ(ドキュメントルート/)にアクセスする(\figref{connect_top} - 1，2)．レスポンス時にsocket のコネクションを確立する(\figref{connect_top} - 3，4)．
 
