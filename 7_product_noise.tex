@@ -1,22 +1,31 @@
 %%%%%%%%%%%% ------------ chapter header ------------  %%%%%%%%%%%%
 \chapterhead
 % chapter title
-{GPS 経路ノイズ除去}
+%% {GPS 経路ノイズ除去}
+{GPS route noise removal}
 % chapter abst
-{本章では GPS のデータのログにおけるノイズフィルタリング手法の提案について述べる．}
+%% {本章では GPS のデータのログにおけるノイズフィルタリング手法の提案について述べる}
+{This chapter describes the proposal of the noise filtering technique in the log of the GPS data}
 
 %%%%%%%%%%%% ------------ next page ------------  %%%%%%%%%%%%
 
-\section{背景と関連研究}
-GPS 技術は実時間の高精度な測位を可能にした技術であり，多様な分野で活用されてる．一方で GPS による測位誤差についての問題も広く知られている\cite{gps_wrong}．
+%% \section{背景と関連研究}
+%% GPS 技術は実時間の高精度な測位を可能にした技術であり，多様な分野で活用されてる．一方で GPS による測位誤差についての問題も広く知られている\cite{gps_wrong}．
+\section{Background and related research}
+GGPS technology is a technology that enables highly precise positioning of real-time, are utilized in various fields. On the other hand it is widely known is also a problem for the positioning error by the GPS in\cite{gps_wrong}.
 
-\section{サンプルデータ}
-実験には移動距離が長く，特殊な動きをするスキーで記録したデータをサンプルとして用いた．\figref{ski_days}3日間のスキーデータのうち，2日目のデータが特にノイズの見られた．5秒間隔でログを記録した GPSデータ 1963個を使用する．
-サンプルデータらからは\figref{gps_noise} のような GPS のノイズが見られた．
+%% \section{サンプルデータ}
+%% 実験には移動距離が長く，特殊な動きをするスキーで記録したデータをサンプルとして用いた．\figref{ski_days}3日間のスキーデータのうち，2日目のデータが特にノイズの見られた．5秒間隔でログを記録した GPSデータ 1963個を使用する．
+%% サンプルデータらからは\figref{gps_noise} のような GPS のノイズが見られた．
+\section{Sample data}
+Long moving distance in the experiment, using the recording data on skiings for a special motion as the sample\figref{ski_days}. Of Skiing data for 3 days, day 2 data was seen particularly noisy. 5-second intervals using GPS data 1963 pieces of which were recorded in the log.
+From the sample data et GPS noise like \figref{gps_noise} was observed.
 
 % 
-\myfigtwo{ski_days.png}{スキーでの取得データ}{ski_days}
-{gps_noise.png}{GPS のノイズ}{gps_noise}
+%% \myfigtwo{ski_days.png}{スキーでの取得データ}{ski_days}
+%% {gps_noise.png}{GPS のノイズ}{gps_noise}
+\myfigtwo{ski_days.png}{Ski of acquired data Red: the first day, blue: the second day, green: the third day}{ski_days}
+{gps_noise.png}{GPS noise, the arrow portion of the sample data}{gps_noise}
 
 
 
@@ -26,31 +35,45 @@ GPS 技術は実時間の高精度な測位を可能にした技術であり，�
 
 
 
-\section{アルゴリズム}
-データは一定間隔で記録しているので，連続したデータの 2 点間の距離の大きさから速度が求まる．明らかに不自然な速度で移動したとみなされるデータの削除を行う．
-手順は\figref{sequens_filter}のように行う．また，距離の計算にはヒュベニの公式を用いた．
-2点間距離の降順に上位の割合をしきい値としてマップにプロットし，評価を行った
+%% \section{アルゴリズム}
+%% データは一定間隔で記録しているので，連続したデータの 2 点間の距離の大きさから速度が求まる．明らかに不自然な速度で移動したとみなされるデータの削除を行う．
+%% 手順は\figref{sequens_filter}のように行う．また，距離の計算にはヒュベニの公式を用いた．
+%% 2点間距離の降順に上位の割合をしきい値としてマップにプロットし，評価を行った
+%% 
+%% \myfig[width=10cm]{sequens_filter.png}{提案フィルタリング手順}{sequens_filter}
+\section{Algorithm}
+Since the data are recorded at regular intervals, the speed is determined from the size of the distance between two points of consecutive data. And delete data that are considered to have moved in the apparently unnatural speed.
+Procedure is carried out as shown in \figref{sequens_filter} shown below. In addition, using the Hyubeny formula the distance calculation.
+The ratio of upper and plotted on the map as a threshold in descending order of distance between two points, and evaluated
 
-\myfig[width=10cm]{sequens_filter.png}{提案フィルタリング手順}{sequens_filter}
-
-
-
-
-
-
-\section{実験結果}
-30\%，10\%， 2\% を誤差データの割合としてフィルタリングした結果を\figref{filtered} と \figref{filtered2} に示す．
-特に大きな誤検知データの除去は行うことが出来た．しかし，\figref{gps_inroom} に示すような屋内での GPS ログの誤差はカバーできなかった．
-
-\myfig[width=7cm]{filtered.png}{フィルタ後のデータ，青: フィルタ前，水色: フィルタ後}{filtered}
-\myfig[width=7cm]{filtered2.png}{フィルタ後のデータ2，黄緑: 30\%，水色: 10\%, 赤: 2\%}{filtered2}
-\myfig[width=7cm]{gps_inroom.png}{屋内でのデータフィルタ結果，青: フィルタ前，赤: 30\%, 黄緑: 10\%}{gps_inroom}
+\myfig[width=10cm]{sequens_filter.png}{Proposed filtering procedure}{sequens_filter}
 
 
 
 
-\section{本章のまとめ}
-しきい値をノイズデータの割合として定める事によるフィルタリング手法を提案した．GPS 情報には高度，や精度の情報が付加されているためそれを踏まえた手法の改善などが考えられる．また，フィルタリング処理によりサンプルのデータ数が減ってしまうのは改善点であり，データクレンジング処理も考案が必要である．
+
+%% \section{実験結果}
+%% 30\%，10\%， 2\% を誤差データの割合としてフィルタリングした結果を\figref{filtered} と \figref{filtered2} に示す．
+%% 特に大きな誤検知データの除去は行うことが出来た．しかし，\figref{gps_inroom} に示すような屋内での GPS ログの誤差はカバーできなかった．
+%% 
+%% \myfig[width=7cm]{filtered.png}{フィルタ後のデータ，青: フィルタ前，水色: フィルタ後}{filtered}
+%% \myfig[width=7cm]{filtered2.png}{フィルタ後のデータ2，黄緑: 30\%，水色: 10\%, 赤: 2\%}{filtered2}
+%% \myfig[width=7cm]{gps_inroom.png}{屋内でのデータフィルタ結果，青: フィルタ前，赤: 30\%, 黄緑: 10\%}{gps_inroom}
+\section{Result}
+The result of filtering as the ratio of error data 30\% and 10\% and 2\% shown in \figref{filtered} and filtered{filtered2}.
+In particular, removal of large erroneous detection data was able to do. However, the error of the GPS logs indoors as shown in \figref{gps_inroom} could not be covered.
+
+\myfig[width=7cm]{filtered.png}{Data after the filter, blue: pre-filter, light blue: After filter}{filtered}
+\myfig[width=7cm]{filtered2.png}{Data 2 after the filter, yellow-green: 30\%, light blue: 10\%, red: 2\%}{filtered2}
+\myfig[width=7cm]{gps_inroom.png}{Data filter results in the indoor, blue: pre-filter, red: 30\%, yellow-green: 10\%}{gps_inroom}
+
+
+
+
+%% \section{本章のまとめ}
+%% しきい値をノイズデータの割合として定める事によるフィルタリング手法を提案した．GPS 情報には高度，や精度の情報が付加されているためそれを踏まえた手法の改善などが考えられる．また，フィルタリング処理によりサンプルのデータ数が減ってしまうのは改善点であり，データクレンジング処理も考案が必要である．
+\section{Conclusion of this chapter}
+It proposed a filtering method using it for determining the threshold as a percentage of the noise data. Altitude to the GPS information, and since the accuracy of the information is added and improved techniques in light of it conceivable. In addition, the number of data of the sample by the filtering process is thus reduced is improvement, it is necessary to devise also data cleansing process.
 % 限界
 % 解明点
 % 意義
