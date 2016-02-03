@@ -127,7 +127,7 @@
     \end{center}
 
     %%\addcontentsline{toc}{chapter}{\protect\numberline{第{\thechapter}章}{#1}}
-    \addcontentsline{toc}{chapter}{\protect\numberline{Chapter {\thechapter}} {#1}}
+    \addcontentsline{toc}{chapter}{\protect\numberline{{\thechapter}}{#1}}
 
     \pagestyle{plain}
     % \cfoot{\thepage}
@@ -154,4 +154,16 @@
 % for English
 
 \renewcommand{\figurename}{Fig.}
-\renewcommand{\tablename}{Table }
+\renewcommand{\tablename}{Table.}
+
+%%\renewcommand{\prepartname}{第}
+%% \renewcommand{\postpartname}{部}
+%% \renewcommand{\contentsname}{目 次}
+%% \renewcommand{\listfigurename}{図 目 次}
+%% \renewcommand{\listtablename}{表 目 次}
+%% \renewcommand{\refname}{参考文献}
+%% \renewcommand{\indexname}{索 引}
+%% \renewcommand{\figurename}{図}
+%% \renewcommand{\tablename}{表}
+%% \renewcommand{\appendixname}{付 録}
+%% \renewcommand{\abstractname}{概 要}
