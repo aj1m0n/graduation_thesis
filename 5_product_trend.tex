@@ -1,51 +1,90 @@
 %%%%%%%%%%%% ------------ chapter header ------------  %%%%%%%%%%%%
 \chapterhead
 % chapter title
-{Twitter のローカルトレンドの抽出}
-% chapter abst
-{本章では特定のクラスタ内でのリアルタイムなトレンド解析手法の検討について述べる}
+%% {Twitter のローカルトレンドの抽出}
+{Extraction of the local trend of Twitter}
+% chapter abstraction
+%% {本章では特定のクラスタ内でのリアルタイムなトレンド解析手法の検討について述べる}
+{It describes the study of the real-time trend analysis techniques within a particular cluster in this chapter}
 
 %%%%%%%%%%%% ------------ next page ------------  %%%%%%%%%%%%
 
-\section{背景と関連研究}
-
+%% \section{背景と概要}
+%% % 概要 % 目的
+%% 社会には様々な組織やグループがあり，その内部でのニュースやトレンドが存在する．また，Twitter はリアルタイムな情報や進行中のイベント取得のためのツールとして活発に使用されている．
+%% 関連研究として，ツイート解析によるイベントの混雑状況把握の提案\cite{socialevent}や，トレンドの予測やトリガーとなる事柄の分析手法の提案\cite{trendtrigger}などがされている．
+%% 今回は本学学生によるツイートの解析によりローカルなトレンドキーワードの抽出を試みた．
+\section{Background and related research}
 % 概要 % 目的
-社会には様々な組織やグループがあり，その内部でのニュースやトレンドが存在する．また，Twittr はリアルタイムな情報や進行中のイベント取得のためのツールとして活発に使用されている．
-関連研究として，ツイート解析によるイベントの混雑状況把握の提案\cite{socialevent}や，トレンドの予測やトリガーとなる事柄の分析手法の提案\cite{trendtrigger}などがされている．
-今回は本学学生によるツイートの解析によりローカルなトレンドキーワードの抽出を試みた．
+The society has a variety of organizations and groups, there is a news and trends in the interior. In addition, Twitter has been actively used as a tool for the event acquisition of real-time information and progress.
+As related research, proposals and of the events of the congestion situation grasp by tweet analysis \cite{socialevent}, have any other suggestions of the analysis method of forecasting and will trigger things trend \cite{trendtrigger}.
+We tried to extraction of the local trend keyword by the analysis of this time Tweets by university students.
 
-\section{システム概要}
-サンプルとして，自己申請されたユーザ及び手動での登録を行った，本学学生の Twitter ユーザ合計約 600 ユーザのツイートを対象に集計し，直近の時間帯に流行しているキーワードの抽出をするアプリケーションを実装した．1 時間毎に統計を行い，上位キーワードをトレンドとして Twitter の bot\footnote{インターネット・ボットとして動いている Twitter アカウント} から投稿をする\figref{twittterbot}\cite{tdu_trend}．
+%% \section{システム概要}
+%% サンプルとして，自己申請されたユーザ及び手動での登録を行った，本学学生の Twitter ユーザ合計約 600 ユーザのツイートを対象に集計し，直近の時間帯に流行しているキーワードの抽出をするアプリケーションを実装した．1 時間毎に統計を行い，上位キーワードをトレンドとして Twitter の bot\footnote{インターネット・ボットとして動いている Twitter アカウント} から投稿をする\figref{twittterbot}\cite{tdu_trend}．
+\section{System summary}
+As a sample, was registered at the user has been self-application and manual, the aggregate to target university students of Twitter user a total of about 600 users of the tweet, the extraction of keywords that are prevalent in the immediate vicinity of the time zone application the implemented. To do the statistics every hour, to the post from Twitter of bot \footnote{Twitter account that is running as an Internet bot} the top keywords as a trend\figref{twitterbot} \cite{tdu_trend}.
 
-\section{アルゴリズム}
-トレンドの評価には\figref{trendana}に示す独自のアルゴリズムを使用した．まず単純にキーワードの出現頻度を計算し，ユーザの人数によりポイントの調整を行い，最近一日間の記録したトレンドと累積した単語のポイントをマイナス評価としてノイズの除去を行う．結果の上位 6 件をツイートし，ポイントは次の評価のためにログと累積に分けてデータベースに記録を残す．
+%% \section{アルゴリズム}
+%% トレンドの評価には\figref{trendana}に示す独自のアルゴリズムを使用した．まず単純にキーワードの出現頻度を計算し，ユーザの人数によりポイントの調整を行い，最近一日間の記録したトレンドと累積した単語のポイントをマイナス評価としてノイズの除去を行う．結果の上位 6 件をツイートし，ポイントは次の評価のためにログと累積に分けてデータベースに記録を残す．
+%% 
+%% \myfig[width=8cm]{trendbot.png}{実験で作成した Twitter bot アカウント}{trendbot}
+%% 
+%% トレンドのコンテンツとしての配信についても考察し以下に示す複数の機能を実装した．
+%% \begin{itemize}
+%%     \item 一日や一週間のトレンドの配信
+%%     \item リプライによるキーワード辞書の追加機能
+%%     \item 連続でのトレンド入りの表示
+%% \end{itemize}
+%% 
+%% %  トレンのド処理フロー
+%% \myfig{trendanaw.png}{トレンドの解析のフロー}{trendana}
+\section{Algorithm}
+The evaluation of the trend using the proprietary algorithm as shown in \figref{trendana}. Simply calculate the frequency of occurrence of the keyword First, the adjustment of the point by the number of users, carry out the removal of the noise the point of the words you accumulated and recorded trend of recent one day as a negative evaluation. A result the upper six stars of the tweet, the point is keep a record in the database is divided into the log and cumulative for the next evaluation.
 
-\myfig[width=8cm]{trendbot.png}{実験で作成した Twitter bot アカウント}{trendbot}
+\myfig[width=8cm]{trendbot.png}{Twitter bot account that you created in the experiment}{trendbot}
 
-トレンドのコンテンツとしての配信についても考察し以下に示す複数の機能を実装した．
+And mounting a plurality of the following functions also discussed delivery of as a trend content of.
+
 \begin{itemize}
-    \item 一日や一週間のトレンドの配信
-    \item リプライによるキーワード辞書の追加機能
-    \item 連続でのトレンド入りの表示
+    \item The 1st and the delivery of one week of trend
+    \item Additional features of the keyword dictionary by reply
+    \item Display of trend-filled in a continuous
 \end{itemize}
 
 %  トレンのド処理フロー
-\myfig{trendanaw.png}{トレンドの解析のフロー}{trendana}
+\myfig{trendanaw.png}{Flow of analysis of trends}{trendana}
 
+%% \section{本章のまとめ}
+%% % 限界
+%% % 解明点
+%% 今回の手法でトレンドの抽出を実験した結果，\figref{trendsample0}で示すように実際に学内で突発的に発生し Twitter 上で話題になった情報を抽出することができた．
+%% Twitter 公式でトレンドとして掲示される単語に重複する結果も多く見られた\figref{trendsample1}．また，くだけた文章の分かち書き精度の甘さから特殊な固有名詞などが抽出されにくく，反対に確実に抽出されるハッシュタグのキーワードはポイントが高く偏る傾向があり改善点である．
+%% 
+%% % 意義
+%% % 展望
+%% bot での配信では表現が限られるため，\figref{trendweb}のように web サイトの実装も行った\cite{trend_elzup_com}．
+%% クラスタ内だけでなくローカルの特徴的なキーワードに重きをおく評価の導入，感情の評価による統計，Web サイトでの結果表示などの発展が考えられる．
+%% 
+%% 
+%% \myfigtwo{trendsample0.png}{学内で発生した突発的な情報を含む例}{trendsample0}
+%% {trendsample1.png}{Twitter 公式のトレンドと重複した例}{trendsample1}
+%% \myfig{trendweb.png}{トレンド集計 Web ページ}{trendweb}
+\section{Conclusion of this chapter}
 % 限界
 % 解明点
-今回の手法でトレンドの抽出を実験した結果，\figref{trendsample0}で示すように実際に学内で突発的に発生し Twitter 上で話題になった情報を抽出することができた．
-Twitter 公式でトレンドとして掲示される単語に重複する結果も多く見られた\figref{trendsample1}．また，くだけた文章の分かち書き精度の甘さから特殊な固有名詞などが抽出されにくく，反対に確実に抽出されるハッシュタグのキーワードはポイントが高く偏る傾向があり改善点である．
+As a result of experiments with extracts of trends in this technique, it was possible to extract the information in the news on Twitter sporadic occur in actual campus, as shown in figref{trendsample0}.
+A result of the overlap in words that are posted as a trend in Twitter official was also seen many \figref{trendsample1}. In addition, less likely to be such a special proper nouns from the sweetness of the space between words accuracy of sentences informal extraction, keyword of hash tags that are extracted reliably in opposite is the improvement tend to point is biased high.
 
 % 意義
 % 展望
-bot での配信では表現が限られるため，\figref{trendweb}のように web サイトの実装も行った\cite{trend_elzup_com}．
-クラスタ内だけでなくローカルの特徴的なキーワードに重きをおく評価の導入，感情の評価による統計，Web サイトでの結果表示などの発展が考えられる．
+For the delivery of at bot to be limited representation, it was also carried out implementation of the web site, as shown in \figref{trendweb} \cite{trend_elzup_com}.
+The introduction of the evaluation to put the emphasis on local characteristic keywords not only in the cluster, statistics by the evaluation of emotion, is considered the development of such a result display on the Web site.
 
 
-\myfigtwo{trendsample0.png}{学内で発生した突発的な情報を含む例}{trendsample0}
-{trendsample1.png}{Twitter 公式のトレンドと重複した例}{trendsample1}
-\myfig{trendweb.png}{トレンド集計 Web ページ}{trendweb}
+\myfigtwo{trendsample0.png}{Examples including sudden information that occurred on campus}{trendsample0}
+{trendsample1.png}{Example of the overlap with the Twitter official trend}{trendsample1}
+\myfig{trendweb.png}{Trend aggregation Web page}{trendweb}
 
 
 \newpage
