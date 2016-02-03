@@ -1,93 +1,166 @@
 %%%%%%%%%%%% ------------ chapter header ------------  %%%%%%%%%%%%
 \chapterhead
 % chapter title
-{位置情報付きツイート解析による\\
-経路・イベント検出と可視化}
+%% {位置情報付きツイート解析による\\
+%% 経路・イベント検出と可視化}
+{By the position information with Tweets analysis
+Route event detection and visualization}
+
 % chapter abstraction
-{本章では位置情報付きツイートに着目し，イベント参加者と予測される人の移動経路の Web アプリケーションによる可視化手法について述べる．}
+%%% {本章では位置情報付きツイートに着目し，イベント参加者と予測される人の移動経路の Web アプリケーションによる可視化手法について述べる．}
+This chapter focuses on the position information with a tweet, describes the visualization technique based on Web applications of human movement path that is expected to event participants.
 
 %%%%%%%%%%%% ------------ next page ------------  %%%%%%%%%%%%
 
-\section{システム概要}
-本研究では、位置情報付きツイートに着目しイベント参加者と思われる人の移動経路の可視化とアプリケーションの作成を行った．
-また、ツイート内容と位置情報からクラスタリングしイベントの検出と可視化を目的とし作成したWebアプリケーションについて述べる．
+%% \section{システム概要}
+%% 本研究では、位置情報付きツイートに着目しイベント参加者と思われる人の移動経路の可視化とアプリケーションの作成を行った．
+%% また、ツイート内容と位置情報からクラスタリングしイベントの検出と可視化を目的とし作成したWebアプリケーションについて述べる．
+\section{System summary}
+In this study, we focused on the position information with Discover carried out the creation of visualization and application of human movement path you think that the event participants.
+In addition, we describe a Web application that was created for the purpose of detection and visualization of clustering to events from the position information and tweet content.
 
-\subsection{移動経路可視化}
-研究のサンプルとして2014年10月18日に行われたふじさわ江の島花火大会\cite{webpage_fujisawa}からツイートを収集し移動経路の可視化を行った\figref{hanabi_web}
-イベント参加者と思われるユーザとして花火大会当日に半径10km以内でツイートしたユーザ及び「花火」，「ふじさわ」，主要駅名でのツイートを行ったユーザで絞り込んでデータを収集した．
+%%  \subsection{移動経路可視化}
+%%  研究のサンプルとして2014年10月18日に行われたふじさわ江の島花火大会\cite{webpage_fujisawa}からツイートを収集し移動経路の可視化を行った\figref{hanabi_web}
+%%  イベント参加者と思われるユーザとして花火大会当日に半径10km以内でツイートしたユーザ及び「花火」，「ふじさわ」，主要駅名でのツイートを行ったユーザで絞り込んでデータを収集した．
+\subsection{Moving path visualization}
+Was visualization of the collected moving path a tweet from the sample as 2014 October 18, Fujisawa Enoshima fireworks \cite{webpage_fujisawa} that have been made in days of study\figref{hanabi_web}.
+User and discoveries within a 10km radius to the fireworks display on the day as a user you think that the event participants "fireworks", "Fujisawa", were collected data to narrow down in the user who made the tweets in the main station name.
 
-\myfig{hanabi.png}{アプリケーション画面}{hanabi_web}
+%% \myfig{hanabi.png}{アプリケーション画面}{hanabi_web}
+\myfig{hanabi.png}{Application Screen}{hanabi_web}
 
-\subsection{イベント検出}
-研究のサンプルはシステムを開発した周辺の2015年5月9日から5月12日の間のツイートを収集した．
-ツイートのキーワードと緯度，経度をパラメータにクラスタリングを行いクラスタ毎に色分けをしマップ上に可視化をした．
-またクラスタリング結果のマップ閲覧と管理が行えるWebアプリケーションの作成した\figref{event_all}
+%% \subsection{イベント検出}
+%% 研究のサンプルはシステムを開発した周辺の2015年5月9日から5月12日の間のツイートを収集した．
+%% ツイートのキーワードと緯度，経度をパラメータにクラスタリングを行いクラスタ毎に色分けをしマップ上に可視化をした．
+%% またクラスタリング結果のマップ閲覧と管理が行えるWebアプリケーションの作成した\figref{event_all}
+\subsection{Event detection}
+Sample of the study was to collect the tweets between May 9, 2015 of around has developed a system of May 12.
+Was the visualization to tweets keyword and latitude, on the map and color-coded for each cluster performs a clustering longitude parameters.
+Also created a Web application that allows to manage and map view of clustering results\figref{event_all}.
 
-\myfig{event_all.png}{イベント検出アプリケーション画面}{event_all}
+%% \myfig{event_all.png}{イベント検出アプリケーション画面}{event_all}
+\myfig{event_all.png}{Event detection application screen}{event_all}
 
 
 %%%%%%%%%%%% ------------ next page ------------  %%%%%%%%%%%%
 \newpage
 
-\section{システム構成}
-\subsection{Twitter APIについて}
-\subsubsection{Twitter APIについて}
-本研究のツイート収集には Twitter API を用いた．主に \url{https://api.twitter.com/1.1/search/tweets.json} と \url{https://stream.twitter.com/1.1/statuses/filter.json} を使用しツイートの収集を行った．search/tweets API はツイートのフィルタリングとしてキーワード指定での過去のツイートの検索や緯度経度と半径で指定した範囲の過去のツイートの取得が可能である．また，search/tweets による過去のツイートは1週間前までの制限がある．
+%% \section{システム構成}
+%% \subsection{Twitter APIについて}
+%% \subsubsection{Twitter APIについて}
+%% 本研究のツイート収集には Twitter API を用いた．主に \url{https://api.twitter.com/1.1/search/tweets.json} と \url{https://stream.twitter.com/1.1/statuses/filter.json} を使用しツイートの収集を行った．search/tweets API はツイートのフィルタリングとしてキーワード指定での過去のツイートの検索や緯度経度と半径で指定した範囲の過去のツイートの取得が可能である．また，search/tweets による過去のツイートは1週間前までの制限がある．
+\section{System stracture}
+\subsection{Abount Twitter API}
+The tweet collection of the present study was using the Twitter API. Mainly use the \url{https://api.twitter.com/1.1/search/tweets.json} and \url{https://stream.twitter.com/1.1/statuses/filter.json} was collected tweets. search/tweets API is a possible acquisition of the past tweets range specified in the past tweets search and latitude and longitude and a radius of a keyword specified as the filtering of the tweet. In addition, the past tweets by "search/tweets" there is a limit of up to a week ago.
 
-\subsection{移動経路可視化}
-以下\figref{hanabi_sequence}の手順で解析を行う．
-\myfighalf{hanabi_tweet_sequence.png}{花火ツイート解析の流れ}{hanabi_sequence}
+%% \subsection{移動経路可視化}
+%% 以下\figref{hanabi_sequence}の手順で解析を行う．
+%% \myfighalf{hanabi_tweet_sequence.png}{花火ツイート解析の流れ}{hanabi_sequence}
+\subsection{Moving  path visualization}
+To analyze the procedure in the following \figref{hanabi_sequence}.
+\myfighalf{hanabi_tweet_sequence.png}{Flow of fireworks Tweets analysis}{hanabi_sequence}
 
-\subsubsection{サンプルの取得}
-ふじさわ江の島花火大会の花火打ち上げ地点から周囲10km圏内に絞って取得した．花火打ち上げ地点は緯度35.307061，経度139.478704 とした．さらに取得したツイートのユーザについて当日前後の17日から19日までのツイートを取得した\tabref{tweet_count}．
+%% \subsubsection{サンプルの取得}
+%% ふじさわ江の島花火大会の花火打ち上げ地点から周囲10km圏内に絞って取得した．花火打ち上げ地点は緯度35.307061，経度139.478704 とした．さらに取得したツイートのユーザについて当日前後の17日から19日までのツイートを取得した\tabref{tweet_count}．
+\subsubsection{Acquisition of sample}
+Were acquired focused around 10km distance from the fireworks launch point of Fujisawa Enoshima fireworks. Fireworks launch point is latitude to 35.307061, longitude was 139.478704. It has acquired the tweet of the day from 17 days before and after up to 19 days for further user of the acquired tweet\tabref{tweet_count}
 
-\mytable{花火-サンプルツイート数}{tweet_count}{
+%% \mytable{花火-サンプルツイート数}{tweet_count}{
+%%     \begin{tabular}{|l|r|} \hline
+%%         日付 & サンプルツイート数 \\ \hline \hline
+%%         10月17日 & 5052 \\
+%%         10月18日 & 26723 \\
+%%         10月19日 & 20227 \\ \hline
+%%     \end{tabular}
+%% }
+\mytable{Fireworks - Sample tweet number}{tweet_count}{
     \begin{tabular}{|l|r|} \hline
-        日付 & サンプルツイート数 \\ \hline \hline
-        10月17日 & 5052 \\
-        10月18日 & 26723 \\
-        10月19日 & 20227 \\ \hline
+        Date & Number of sample \\ \hline \hline
+        Oct. 17 & 5052 \\
+        Oct. 18 & 26723 \\
+        Oct. 19 & 20227 \\ \hline
     \end{tabular}
 }
 
-\subsubsection{可視化Webアプリケーション}
-可視化には Google Maps API \cite{webpage_googlemapapi} を使用した．
-各ツイート地点にマーカーの表示を行い，同一のユーザはポリラインを使い前後のツイートと線で結んで表示し，直線であるが経路の可視化を試みた．
-マーカーの色は時間に伴って明度を変えて，朝から夜にかけて明るい赤から暗い赤で表示をした\figref{markers}．
+%% \subsubsection{可視化Webアプリケーション}
+%% 可視化には Google Maps API \cite{webpage_googlemapapi} を使用した．
+%% 各ツイート地点にマーカーの表示を行い，同一のユーザはポリラインを使い前後のツイートと線で結んで表示し，直線であるが経路の可視化を試みた．
+%% マーカーの色は時間に伴って明度を変えて，朝から夜にかけて明るい赤から暗い赤で表示をした\figref{markers}．
+%% \myfigthirdset{marker1.png}{marker2.png}{marker3.png}{左から順に朝，昼，夜の時間帯のマーカー}{markers}
+\subsubsection{Visualization Web application}
+The visualization was using the Google Maps API \cite{webpage_googlemapapi}.
+To display the marker in each tweet point, the same user displays signed before and after the tweet and the line use a polyline, is a straight line was attempted visualization of the route.
+The color of the marker to change the brightness with time, and the display in a dark red from bright red through the night from morning\figref{markers}.
+\myfigthirdset{marker1.png}{marker2.png}{marker3.png}{From left to right, a marker of the morning, noon, night, time zone of}{markers}
 
-\myfigthirdset{marker1.png}{marker2.png}{marker3.png}{左から順に朝，昼，夜の時間帯のマーカー}{markers}
+%% \subsection{Event detection}
+%% \figref{event_sequence}の手順で解析を行う．
+%% \myfighalf{event_tweet_sequence.png}{イベント検出と可視化の流れ}{event_sequence}
+\subsection{Event detection}
+To analyze the procedure in the following \figref{event_sequence}.
+\myfighalf{event_tweet_sequence.png}{Flow of event detection and visualization}{event_sequence}
 
-\subsection{イベント検出}
-\figref{event_sequence}の手順で解析を行う．
-\myfighalf{event_tweet_sequence.png}{イベント検出と可視化の流れ}{event_sequence}
 
-\subsubsection{ツイート収集}
-ツイートは移動経路の可視化と同様に取得した．今回は東京都内のツイートをサンプルとした．東京都心の緯度を35.673343，経度を139.710388から100km圏内，収集日時はは5月9日〜5月12日の4日間とした．
+%% \subsubsection{ツイート収集}
+%% ツイートは移動経路の可視化と同様に取得した．今回は東京都内のツイートをサンプルとした．東京都心の緯度を35.673343，経度を139.710388から100km圏内，収集日時はは5月9日〜5月12日の4日間とした．
+\subsubsection{Tweets collection}
+Discover were obtained similarly to the visualization of the movement path. This time, as a sample of the Tokyo metropolitan area of the tweet. Tokyo downtown latitude 35.673343, 100km within the longitude from 139.710388, collection date and time was 4 days of May 9 to May 12th.
 
-\subsubsection{クラスタリング}
-キーワード・緯度経度を軸にK-meansを用いてクラスタリングを行った．
-結果，各日付について\tabref{event_clusters}のクラスタ数に分類ができた．
-また，時間帯を含めて K-means を試みた結果望ましい結果は得られなかったので手法の検討が必要である．
+%% \subsubsection{クラスタリング}
+%% キーワード・緯度経度を軸にK-meansを用いてクラスタリングを行った．
+%% 結果，各日付について\tabref{event_clusters}のクラスタ数に分類ができた．
+%% また，時間帯を含めて K-means を試みた結果望ましい結果は得られなかったので手法の検討が必要である．
+\subsubsection{Clustering}
+Were clustered using K-means the keyword latitude and longitude to the shaft.
+A result, was able to classify the number of cluster \tabref{event_clusters} for each date.
+Further, it is necessary to examine techniques since the result desired result of attempting K-means could not be obtained, including the time zone.
 
-\mytable{イベント検出 - クラスタ数}{event_clusters}{
+
+%% \mytable{イベント検出 - クラスタ数}{event_clusters}{
+%%     \begin{tabular}{|l|r|} \hline
+%%         日付 & クラスタ数 \\ \hline \hline
+%%         5月09日 & 10 \\
+%%         5月10日 & 12 \\
+%%         5月11日 & 7 \\
+%%         5月12日 & 7 \\ \hline
+%%     \end{tabular}
+%% }
+\mytable{Event detection - the number of clusters}{event_clusters}{
     \begin{tabular}{|l|r|} \hline
-        日付 & クラスタ数 \\ \hline \hline
-        5月09日 & 10 \\
-        5月10日 & 12 \\
-        5月11日 & 7 \\
-        5月12日 & 7 \\ \hline
+        Date & Number of Culster \\ \hline \hline
+        May. 09 & 10 \\
+        May. 10 & 12 \\
+        May. 11 & 7 \\
+        May. 12 & 7 \\ \hline
     \end{tabular}
 }
 
-\subsubsection{可視化Webアプリケーション}
-経路可視化と同様にGoogleMapを使用した． クラスタ毎にマーカーの色を変更している．
-可視化の結果10日の結果で良い結果が得られたので取り上げる\figref{event_day10}．10日のクラスタは以下の様な一覧\tabref{event_day10_clusters}になった．
+%% \subsubsection{可視化Webアプリケーション}
+%% 経路可視化と同様にGoogleMapを使用した． クラスタ毎にマーカーの色を変更している．
+%% 可視化の結果10日の結果で良い結果が得られたので取り上げる\figref{event_day10}．10日のクラスタは以下の様な一覧\tabref{event_day10_clusters}になった．
+%% \myfig{event_day10.png}{5月10日のプロット結果}{event_day10}
+\subsubsection{Visualization Web application}
+Using GoogleMap like the path visualization. It has changed the color of the marker in each cluster.
+Pick up because the good results in the result of the visualization results 10 days were obtained. 10 days clusters became list, such as follows \figref{event_day10}.
+\myfig{event_day10.png}{Plot the results May 10}{event_day10}
 
-\myfig{event_day10.png}{5月10日のプロット結果}{event_day10}
-
-\mytable{イベント検出 - 5月10日}{event_day10_clusters}{
+%% \mytable{イベント検出 - 5月10日}{event_day10_clusters}{
+%%     \begin{tabular}{|l|r|} \hline
+%%         キーワード & ツイート数 \\ \hline \hline
+%%         imacoconow & 264 \\
+%%         kawaguchi & 76 \\
+%%         神田祭 & 65 \\
+%%         photo & 43 \\
+%%         横浜 & 41 \\
+%%         週末限定 & 38 \\
+%%         神田明神 & 35 \\
+%%         東京 & 30 \\
+%%         天気 & 28 \\ \hline
+%%     \end{tabular}
+%% }
+\mytable{Event detection - May 10}{event_day10_clusters}{
     \begin{tabular}{|l|r|} \hline
-        キーワード & ツイート数 \\ \hline \hline
+        Keyword & Number of Tweets \\ \hline \hline
         imacoconow & 264 \\
         kawaguchi & 76 \\
         神田祭 & 65 \\
@@ -100,35 +173,53 @@
     \end{tabular}
 }
 
-\subsubsection{可視化によって発見できたイベント}
-5月10日には実験前から把握していたイベントの神田祭の神輿宮入が終日行われていた\cite{webpage_kanda}．
-実際にイベント周辺でのツイートを検出する事ができた\figref{event_desc_kanda}．
-また，同日に事前に走らなかった「野外音楽フェスティバル 人間交差点 2015 \cite{webpage_nkfes}」というイベントも行われており，こちらもイベント周辺でのツイートとして検出することが出来たと言える\figref{event_desc_nkfes}．
+%% \subsubsection{可視化によって発見できたイベント}
+%% 5月10日には実験前から把握していたイベントの神田祭の神輿宮入が終日行われていた\cite{webpage_kanda}．
+%% 実際にイベント周辺でのツイートを検出する事ができた\figref{event_desc_kanda}．
+%% また，同日に事前に走らなかった「野外音楽フェスティバル 人間交差点 2015 \cite{webpage_nkfes}」というイベントも行われており，こちらもイベント周辺でのツイートとして検出することが出来たと言える\figref{event_desc_nkfes}．
+\subsubsection{Events that could be discovered by visualization}
+It is on 10 May shrine of Kanda Festival of events that had been understood from the previous experiment Miyairi has been carried out throughout the day.
+It was actually able to detect the tweets around events \cite{webpage_kanda}.
+In addition, has also been events that did not run in advance on the same day "野外音楽フェスティバル 人間交差点 2015 \cite{webpage_nkfes}", it can be said that here also could be detected as tweets around events.
 
-\myfigtwo{event_desc_kanda.png}{神田祭ツイートのプロット}{event_desc_kanda}
-{event_desc_nkfes.png}{nkfesツイートのプロット}{event_desc_nkfes}
+%% \myfigtwo{event_desc_kanda.png}{神田祭ツイートのプロット}{event_desc_kanda}
+%% {event_desc_nkfes.png}{nkfesツイートのプロット}{event_desc_nkfes}
+\myfigtwo{event_desc_kanda.png}{Plot of Kandasai Tweets}{event_desc_kanda}
+{event_desc_nkfes.png}{Plot of nkfes Tweets}{event_desc_nkfes}
 
-\subsection{Geo Tweet収集クライアント}
-今回の研究でTweetを収集するためにツールとして位置情報付きのツイートを API を使用して一括で収集するWebアプリケーションを作成した\figref{controller_app}．
-最近のツイートを取得する用途で，今後の研究で活用が期待される．
-\myfig{collector_app.png}{Tweet 収集アプリケーションUI}{controller_app}
+%% \subsection{Geo Tweet収集クライアント}
+%% 今回の研究でTweetを収集するためにツールとして位置情報付きのツイートを API を使用して一括で収集するWebアプリケーションを作成した\figref{controller_app}．
+%% 最近のツイートを取得する用途で，今後の研究で活用が期待される．
+%% \myfig{collector_app.png}{Tweet 収集アプリケーションUI}{controller_app}
+\subsection{Geo Tweet collection client}
+We have created a Web application that collects in bulk tweets with location information as a tool to collect the Tweet in this study by using the API \figref{controller_app}.
+In applications to get a recent tweet, it is expected to take advantage in future research.
+\myfig{collector_app.png}{Tweet collection application UI}{controller_app}
 
 
 %%%%%%%%%%%% ------------ next page ------------  %%%%%%%%%%%%
 \newpage
 
-\section{本章のまとめ}
+\section{Conclusion of this chapter}
+%% % 限界
+%% 結果として，可視化から主要に使用されている駅の推測などはできるが，収集で得られた情報だけでは各ユーザの参加までの移動元や人の流れは大まかにしか予測できなかった．
+%% % 解明点
+%% 関連研究として，位置情報をもたないツイートへの情報付加手法が提案されており\cite{twitterlocalevent}，活用することで情報の増加とユーザに対する分析が望める．
+%% 
+%% % 意義
+%% % 展望
+%% 現在はユーザの属性づけができていないため，今後は付加情報とその可視化で意義を見出せないか試みたい．
+%% 時間軸を含めたクラスタリングもイベントの検出精度に関わると考えられる．アニメーションを用いたビジュアライズも表現方法の可能性が広がると思われる．
+
 % 限界
-結果として，可視化から主要に使用されている駅の推測などはできるが，収集で得られた情報だけでは各ユーザの参加までの移動元や人の流れは大まかにしか予測できなかった．
+As a result, although it is such speculation stations that are key to use from the visualization, the moving source and the human flow of only the information obtained in the collection to join each user it could not be predicted only roughly.
 
 % 解明点
-関連研究として，位置情報をもたないツイートへの情報付加手法が提案されており\cite{twitterlocalevent}，活用することで情報の増加とユーザに対する分析が望める．
+As a related study, information adding approach to Discover no location information have been proposed\cite{twitterlocalevent}, the analysis can be expected with respect to the increase and the user information by utilizing.
 
 % 意義
-
 % 展望
-現在はユーザの属性づけができていないため，今後は付加情報とその可視化で意義を見出せないか試みたい．
-時間軸を含めたクラスタリングもイベントの検出精度に関わると考えられる．アニメーションを用いたビジュアライズも表現方法の可能性が広がると思われる．
-
+Because the current is not able to attribute pickled user, I want to try or not find any significance in the visualization in the future and the additional information.
+Clustering, including the time axis is also considered to be involved in the detection accuracy of the event. Visualize using the animation is also believed to have spread the possibility of representation.
 
 \newpage
