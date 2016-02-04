@@ -22,13 +22,16 @@ We tried to extraction of the local trend keyword by the analysis of this time T
 
 %% \section{システム概要}
 %% サンプルとして，自己申請されたユーザ及び手動での登録を行った，本学学生の Twitter ユーザ合計約 600 ユーザのツイートを対象に集計し，直近の時間帯に流行しているキーワードの抽出をするアプリケーションを実装した．1 時間毎に統計を行い，上位キーワードをトレンドとして Twitter の bot\footnote{インターネット・ボットとして動いている Twitter アカウント} から投稿をする\figref{twittterbot}\cite{tdu_trend}．
+%%
+%% \myfig[width=8cm]{trendbot.png}{実験で作成した Twitter bot アカウント}{trendbot}
 \section{System summary}
-As a sample, was registered at the user has been self-application and manual, the aggregate to target university students of Twitter user a total of about 600 users of the tweet, the extraction of keywords that are prevalent in the immediate vicinity of the time zone application the implemented. To do the statistics every hour, to the post from Twitter of bot \footnote{Twitter account that is running as an Internet bot} the top keywords as a trend\figref{twitterbot} \cite{tdu_trend}.
+As a sample, was registered at the user has been self-application and manual, the aggregate to target university students of Twitter user a total of about 600 users of the tweet, the extraction of keywords that are prevalent in the immediate vicinity of the time zone application the implemented. To do the statistics every hour, to the post from Twitter of bot \footnote{Twitter account that is running as an Internet bot} the top keywords as a trend\figref{trendbot} \cite{tdu_trend}.
+
+\myfig[width=8cm]{trendbot.png}{Twitter bot account that you created in the experiment}{trendbot}
 
 %% \section{アルゴリズム}
 %% トレンドの評価には\figref{trendana}に示す独自のアルゴリズムを使用した．まず単純にキーワードの出現頻度を計算し，ユーザの人数によりポイントの調整を行い，最近一日間の記録したトレンドと累積した単語のポイントをマイナス評価としてノイズの除去を行う．結果の上位 6 件をツイートし，ポイントは次の評価のためにログと累積に分けてデータベースに記録を残す．
 %% 
-%% \myfig[width=8cm]{trendbot.png}{実験で作成した Twitter bot アカウント}{trendbot}
 %% 
 %% トレンドのコンテンツとしての配信についても考察し以下に示す複数の機能を実装した．
 %% \begin{itemize}
@@ -41,8 +44,6 @@ As a sample, was registered at the user has been self-application and manual, th
 %% \myfig{trendanaw.png}{トレンドの解析のフロー}{trendana}
 \section{Algorithm}
 The evaluation of the trend using the proprietary algorithm as shown in \figref{trendana}. Simply calculate the frequency of occurrence of the keyword First, the adjustment of the point by the number of users, carry out the removal of the noise the point of the words you accumulated and recorded trend of recent one day as a negative evaluation. A result the upper six stars of the tweet, the point is keep a record in the database is divided into the log and cumulative for the next evaluation.
-
-\myfig[width=8cm]{trendbot.png}{Twitter bot account that you created in the experiment}{trendbot}
 
 And mounting a plurality of the following functions also discussed delivery of as a trend content of.
 

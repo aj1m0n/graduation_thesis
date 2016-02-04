@@ -2,8 +2,8 @@
 \chapterhead
 % chapter title
 %% {即興的及び人数チームプレイが可能な\\ブラウザネットワーキングゲーム基盤}
-{Browser networking game infrastructure\\
-that can be improvised and number of team play}
+{A instant browser networking game platform\\
+supporting multiple players}
 % chapter abst
 %% {本章では，作成した即興的な多人数プレイが可能なブラウザネットワーキングゲームについて述べる．}
 {In this chapter, we describe a browser capable of networking game is improvised multiplayer play that was created.}
@@ -33,7 +33,7 @@ We focused on immediate establishment of a connection where the smartphone with 
 
 As an example with the creation of the game platform, it was the creation of a multiplayer-enabled browser shooter. QR code as the \figref{qr} is displayed when you start the server to access from the monitor terminal to the game page in a browser. Players who play in the same screen can participate in the play can be accessed by the QR code read by smartphone terminal to the URL for the controller.
 
-Controller is a horizontal possession smartphones, shake (shake the smartphone) was placed in the game as the input also like behavior \figref(controller). Immediate participation in the smartphone by using a socket communication \cite{webpagesocketio} can be a real-time operation of the player can be.
+Controller is a horizontal possession smartphones, shake (shake the smartphone) was placed in the game as the input also like behavior \figref{controller}. Immediate participation in the smartphone by using a socket communication \cite{webpagesocketio} can be a real-time operation of the player can be.
 
 \myfig{qr.png}{Authentication QR code}{qr}
 \myfigdouble{con.jpg}{help.png}{Controller, controller of the description}{controller}
@@ -150,8 +150,8 @@ Game-time communication is sent to the client that opened the main page through 
 %% % 展望
 %% このシステムの応用としては，サーバーサイドの汎用化，ライブラリ化が望める．RaspberryPI への移植も行えれば Wifi を吹くことでネットワーク環境のない被災地などでもモバイル端末への通信の可能性も広がると思われる．
 \section{Conclusion of this chapter}
-Figure how you are playing the game To me it shows \figref{game_main}.
-\myfig[width=12cm]{game_main.jpg}{State of play}{play}
+Figure how you are playing the game To me it shows \figref{gamemain}.
+\myfig[width=12cm]{game_main.jpg}{State of play}{gamemain}
 % 限界
 Game freeze occurs this time made the game is about once in 20 seconds in connection with four people, was seen constantly Kaku with that's connected in eight. If the data to be handled in the socket is simple is believed that can improve the performance of.
 
