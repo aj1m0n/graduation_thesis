@@ -4,11 +4,11 @@
 %% {位置情報付きツイート解析による\\
 %% 経路・イベント検出と可視化}
 {Route event detection and visualization\\
-by the position information with Tweets analysis}
+by the location information with Tweets analysis}
 
 % chapter abstraction
 %%% {本章では位置情報付きツイートに着目し，イベント参加者と予測される人の移動経路の Web アプリケーションによる可視化手法について述べる．}
-{This chapter focuses on the position information with a tweet, describes the visualization technique based on Web applications of human movement path that is expected to event participants.}
+{This chapter focuses on tweets marked with location information, describes the visualization technique based on Web applications of human movement path that is expected to event participants.}
 
 %%%%%%%%%%%% ------------ next page ------------  %%%%%%%%%%%%
 
@@ -16,15 +16,19 @@ by the position information with Tweets analysis}
 %% 本研究では、位置情報付きツイートに着目しイベント参加者と思われる人の移動経路の可視化とアプリケーションの作成を行った．
 %% また、ツイート内容と位置情報からクラスタリングしイベントの検出と可視化を目的とし作成したWebアプリケーションについて述べる．
 \section{System summary}
-In this study, we focused on the position information with discover carried out the creation of visualization and application of human movement path you think that the event participants.
-In addition, we describe a Web application that was created for the purpose of detection and visualization of clustering to events from the position information and tweet content.
+In this study, creation of visualization and application of human movement path of user expected to event participants, with location information.
+In addition, we describe a Web application that was created for the purpose of detection and visualization of clustering to events from the location information and tweet content.
 
 %%  \subsection{移動経路可視化}
 %%  研究のサンプルとして2014年10月18日に行われたふじさわ江の島花火大会\cite{webpage_fujisawa}からツイートを収集し移動経路の可視化を行った\figref{hanabi_web}
 %%  イベント参加者と思われるユーザとして花火大会当日に半径10km以内でツイートしたユーザ及び「花火」，「ふじさわ」，主要駅名でのツイートを行ったユーザで絞り込んでデータを収集した．
 \subsection{Moving path visualization}
 Was visualization of the collected moving path a tweet from the sample as 2014 October 18, Fujisawa Enoshima fireworks \cite{webpage_fujisawa} that have been made in days of study\figref{hanabi_web}.
-User and discoveries within a 10km radius to the fireworks display on the day as a user you think that the event participants "fireworks", "Fujisawa", were collected data to narrow down in the user who made the tweets in the main station name.
+Data was collected, and defined as follows event participants Fireworks on the day.
+\begin{itemize}
+    \item Tweeted in within a radius of 10km.
+    \item Made the tweets including the "fireworks" or "Fujisawa" or main station name.
+\end{itemize}
 
 %% \myfig{hanabi.png}{アプリケーション画面}{hanabi_web}
 \myfig{hanabi.png}{Application Screen}{hanabi_web}
@@ -34,8 +38,8 @@ User and discoveries within a 10km radius to the fireworks display on the day as
 %% ツイートのキーワードと緯度，経度をパラメータにクラスタリングを行いクラスタ毎に色分けをしマップ上に可視化をした．
 %% またクラスタリング結果のマップ閲覧と管理が行えるWebアプリケーションの作成した\figref{event_all}
 \subsection{Event detection}
-Sample of the study was to collect the tweets between May 9, 2015 of around has developed a system of May 12.
-Was the visualization to tweets keyword and latitude, on the map and color-coded for each cluster performs a clustering longitude parameters.
+Sample of a study collected tweets, was posted May 9 to May 12, 2015, in the circumference of the time when a system has been developed.
+Visualization to tweets keyword and latitude, on the map and color-coded for each cluster performs a clustering longitude parameters.
 Also created a Web application that allows to manage and map view of clustering results\figref{event_all}.
 
 %% \myfig{event_all.png}{イベント検出アプリケーション画面}{event_all}
@@ -63,7 +67,8 @@ To analyze the procedure in the following \figref{hanabi_sequence}.
 %% \subsubsection{サンプルの取得}
 %% ふじさわ江の島花火大会の花火打ち上げ地点から周囲10km圏内に絞って取得した．花火打ち上げ地点は緯度35.307061，経度139.478704 とした．さらに取得したツイートのユーザについて当日前後の17日から19日までのツイートを取得した\tabref{tweet_count}．
 \subsubsection{Acquisition of sample}
-Were acquired focused around 10km distance from the fireworks launch point of Fujisawa Enoshima fireworks. Fireworks launch point is latitude to 35.307061, longitude was 139.478704. It has acquired the tweet of the day from 17 days before and after up to 19 days for further user of the acquired tweet\tabref{tweet_count}
+Were acquired focused around 10km distance from the fireworks launch point of Fujisawa Enoshima fireworks. Fireworks launch point is W\ang{35;18;25} E\ang{139;28;43}. Furthermore collect the tweet, posted by acquired tweet's owner, of the day from 17 to 19 days\tabref{tweet_count}
+
 
 %% \mytable{花火-サンプルツイート数}{tweet_count}{
 %%     \begin{tabular}{|l|r|} \hline
@@ -104,7 +109,7 @@ To analyze the procedure in the following \figref{event_sequence}.
 %% \subsubsection{ツイート収集}
 %% ツイートは移動経路の可視化と同様に取得した．今回は東京都内のツイートをサンプルとした．東京都心の緯度を35.673343，経度を139.710388から100km圏内，収集日時はは5月9日〜5月12日の4日間とした．
 \subsubsection{Tweets collection}
-Discover were obtained similarly to the visualization of the movement path. This time, as a sample of the Tokyo metropolitan area of the tweet. Tokyo downtown latitude 35.673343, 100km within the longitude from 139.710388, collection date and time was 4 days of May 9 to May 12th.
+Discover were obtained similarly to the visualization of the movement path. This time, as a sample of the Tokyo metropolitan area of the tweet. Tokyo downtown, 100km within the from E\ang{35;40;24} W\ang{139;42;37}, collection date and time was 4 days of May 9 to May 12th.
 
 %% \subsubsection{クラスタリング}
 %% キーワード・緯度経度を軸にK-meansを用いてクラスタリングを行った．
