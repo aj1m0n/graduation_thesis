@@ -4,8 +4,8 @@
 %% {モバイル端末センシングサーバAPI}
 {Mobile terminal sensing server API}
 % chapter abstract
-%% {本章ではモバイル端末に付属のセンサで収集したデータのログを管理するためのサーバアプリケーションの作成について述べる}
-{This chapter describes the creation of the server application for managing the log of data collected by a sensor attached to the mobile terminal}
+%% {本章では，モバイル端末に付属のセンサで収集したデータのログを管理するためのサーバアプリケーションの作成について述べる}
+{In this chapter, describes the creation of the server application for managing the log of data collected by a sensor attached to the mobile terminal}
 
 %%%%%%%%%%%% ------------ next page ------------  %%%%%%%%%%%%
 
@@ -22,7 +22,7 @@ This time, the purpose of the sensor information management through the use and 
 %% 管理画面はシンプルな UI にし，ユーザ毎やプロジェクト単位でのデータエクスポートを管理画面から行えるようにした\figref{manageproject}\figref{manageuser}．収集したデータの分析のために CSV と KML のフォーマットでのエクスポート機能を実装した．KML は Google Earth や Google Maps でサポートされていて分析に有効である．Google Earth を用いた出力として\figref{kmlroute}と高度情報を表示した\figref{kmlheight}を示す．
 \section{System summary}
 Defining the data structure to be stored on the server as shown in \figref{datastructurew}. This is for the purpose of Project specific administration, Project and User was one-to-many.
-The mobile terminal of the client application, it is possible to create a simple sensing applications to use two to perform "issued Create User Project" and "Additional sensor information of the user".
+The mobile terminal of the client application, it is possible to create a simple sensing applications to use two to perform "Request to create a user of the project" and "Additional sensor information of the user".
 Management screen is a simple UI, was to allow the data export in the per-user or per-project basis from the management screen \figref{manageproject} \figref{manageuser}. Implementation of the export function in CSV and KML format for analysis of the collected data. KML is effective for the analysis have been supported by the Google Earth and Google Maps \figref{kmlroute}. And as an output using the Google Earth shows the displaying the altitude information \figref{kmlheight}.
 
 %% % データ構造 Project-User-Logs
