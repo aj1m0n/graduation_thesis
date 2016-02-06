@@ -16,7 +16,7 @@ supporting multiple players}
 %% 
 %% 我々は，スマートフォンをコントローラとしたコネクションの即時的な確立に着目した．そして即時参加が可能なブラウザアプリケーションの作成による，QR コードと WebSocket を用いたスマートフォンによる情報共有手法の提案をについて述べる\cite{ec2015}．
 
-In recent years, real-time communication technology has been attracting attention by WebSocket \cite{websocket}. There is a need to work efficiently use the communication tool in many of the technical positions. It to the background, the study of real-time synchronization WebGL technique suggestions \cite{websocket_webgl} and Web desktop sharing of using WebSocket \cite{weboscket_desktop} is being carried out in joint research. Moreover, against the background of the widespread use of smart phones \cite{smartphone_share}, take advantage of the QR code \cite{qrcode} has also penetrated, recognition rate of QR code reader is a more than 90\%, finding that use experience rate is about 70\% are out \cite{qrcoderesearch}.
+Recently, real-time communication technology has been attracting attention by WebSocket \cite{websocket}. Communication tools is in demand at technical positions to work effectively. Thus, the study of real-time synchronization WebGL technique suggestions \cite{websocket_webgl} and Web desktop sharing of using WebSocket \cite{weboscket_desktop} is being carried out in joint research. Moreover, against the background of the widespread use of smart phones \cite{smartphone_share}, take advantage of the QR code \cite{qrcode} has also penetrated, recognition rate of QR code reader is a more than 90\%, finding that use experience rate is about 70\% are out \cite{qrcoderesearch}.
 
 We focused on immediate establishment of a connection where the smartphone with the controller. And by the creation of immediate participation capable browser application, describes the proposed information sharing method based on smart phone using the QR code and WebSocket\cite{ec2015}．
 
@@ -31,7 +31,7 @@ We focused on immediate establishment of a connection where the smartphone with 
 %% \myfigdouble{con.jpg}{help.png}{コントローラ，コントローラの説明}{controller}
 \section{System summary}
 
-As an example with the creation of the game platform, it was the creation of a multiplayer-enabled browser shooter. QR code as the \figref{qr} is displayed when you start the server to access from the monitor terminal to the game page in a browser. Players who play in the same screen can participate in the play can be accessed by the QR code read by smartphone terminal to the URL for the controller.
+As an example with the creation of the game platform, creation of a multiplayer-enabled browser shooter. QR code \figref{qr} as the is displayed when you start the server to access from the monitor terminal to the game page in a browser. Players who play in the same screen can participate in the play can be accessed by the QR code read by smartphone terminal to the URL for the controller.
 
 Controller is a horizontal possession smartphones, shake (shake the smartphone) was placed in the game as the input also like behavior \figref{controller}. Immediate participation in the smartphone by using a socket communication \cite{webpagesocketio} can be a real-time operation of the player can be.
 
@@ -59,11 +59,11 @@ Controller is a horizontal possession smartphones, shake (shake the smartphone) 
 The content of the game will be explained.
 
 The game was to create a plane of the shooting game. Section, consisting of the wall can be moved on the stage is the player \figref{player} object can not pass through \figref{stage}.
-Players have an HP (Hit Point), MP (Hit Point), consume MP to shot attack, it consumed MP is MP and get scattered to the map was added to the rules of the feature of recovery.
+Players have an HP \footnote{Hit Point}, MP \footpoint{Magic Point}, consume MP to shot attack, consumed MP is scattered in the map, MP is restored and to get scattered MP.
 
 Action of the player can be done, but three of the move and shot attack and dash. Shot in the controller right, shot in the controller left attack, dash can be in the shake.
 
-It was consideration of the processing speed for the number of players. It was performed regression analysis taking the connection number and FPS about creating the game \figref{graph}.
+Discussion about the number of players to affect the processing speed, game was performed regression analysis taking the connection number and FPS about creating the game \figref{graph}.
 Some display was the state are heavy in seven of 28.28fps at the time of connection
 
 \myfigtwo
@@ -117,7 +117,7 @@ To establish a connection in the flow \figref{connect_top}, such as:
     \item To establish a socket connection at the time of the response. (3, 4)
 \end{itemize}
 
-It is to play until the preparation of the game screen do the following such communication \figref{connect_sub}.
+Performs the following communication before playing preparation of the game \figref{connect_sub}.
 
 \begin{itemize}
     \item Clients access to the team selection page (/con). (1, 2)
@@ -125,7 +125,8 @@ It is to play until the preparation of the game screen do the following such com
     \item To send additional information to the display terminal or other users. (7)．
 \end{itemize}
 
-Game-time communication is sent to the client that opened the main page through socket for input of a controller as shown \figref(nodegame), it is synchronized with the player's actions.
+Game-time communication is sent to the client that opened the main page through socket for input of a controller as shown \figref(nodegame),
+moreover, synchronized with the player's actions.
 
 \myfigtwo{node_top_en.png}{Communication at the time of the main page connection}{connect_top}
 {node_con_en.png}{Communication at the time of the controller connection}{connect_sub}
@@ -148,9 +149,9 @@ Game-time communication is sent to the client that opened the main page through 
 %% % 意義
 %% 
 %% % 展望
-%% このシステムの応用としては，サーバーサイドの汎用化，ライブラリ化が望める．RaspberryPI への移植も行えれば Wifi を吹くことでネットワーク環境のない被災地などでもモバイル端末への通信の可能性も広がると思われる．
+%% このシステムの応用としては，サーバーサイドの汎用化，ライブラリ化が望める．RaspberryPI への移植も行えれば, ルーターとなることでネットワーク環境のない被災地などでもモバイル端末への通信の可能性も広がると思われる．
 \section{Conclusion of this chapter}
-Figure how you are playing the game To me it shows \figref{gamemain}.
+It shows how you are playing the game in the following \figref{gamemain}.
 \myfig[width=12cm]{game_main.jpg}{State of play}{gamemain}
 % 限界
 Game freeze occurs this time made the game is about once in 20 seconds in connection with four people, was seen constantly Kaku with that's connected in eight. If the data to be handled in the socket is simple is believed that can improve the performance of.
@@ -162,7 +163,8 @@ Considered and evaluation of packaging and network load as the starting point an
 % 意義
 
 % 展望
-The application of this system, a general purpose of the server-side, a library can be expected. It seems to spread the possibility of communication to the mobile terminal in such there is no network environment affected areas by blowing the Wifi if it is possible to perform also porting to RaspberryPI.
+The application of this system, a general purpose of the server-side, a library can be expected.
+It seems to spread the possibility of communication to the mobile terminal in such there is no network environment affected areas by blowing the router if it is possible to perform also porting to RaspberryPI.
 
 
 \newpage
