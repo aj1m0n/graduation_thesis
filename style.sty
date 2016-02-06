@@ -94,8 +94,10 @@
   \end{figure}
 }
 
-\newcommand\figref[1]{(図~\ref{fig:#1})}
-\newcommand\tabref[1]{(表~\ref{tab:#1})}
+%% \newcommand\figref[1]{(図~\ref{fig:#1})}
+%% \newcommand\tabref[1]{(表~\ref{tab:#1})}
+\newcommand\figref[1]{(fig~\ref{fig:#1})}
+\newcommand\tabref[1]{(table~\ref{tab:#1})}
 
 \newcommand{\chapterhead}[2]{
     \stepcounter{chapter}%
@@ -104,7 +106,8 @@
 
     \begin{center}
         \vspace{0.5cm}
-        \huge{\bf 第{\thechapter}章}
+        %% \huge{\bf 第{\thechapter}章}
+        \huge{\bf Chapter {\thechapter}}
         \par
         \vspace{1cm}
         \hrulefill
@@ -123,13 +126,19 @@
         \end{flushleft}
     \end{center}
 
-    \addcontentsline{toc}{chapter}{\protect\numberline{第{\thechapter}章}{#1}}
-    \pagestyle{empty}
+    %%\addcontentsline{toc}{chapter}{\protect\numberline{第{\thechapter}章}{#1}}
+    \addcontentsline{toc}{chapter}{\protect\numberline{{\thechapter}}{#1}}
+
+    \pagestyle{plain}
+    % \cfoot{\thepage}
+    % \lhead{}
+    \rhead{}
     \clearpage
 
     \pagestyle{fancy}
     \lhead{}
-    \rhead{第{\thechapter}章 #1}
+    %% \rhead{第{\thechapter}章 #1}
+    \rhead{Chapter {\thechapter} #1}
 }
 
 \newcommand{\mytable}[3]{
@@ -141,3 +150,21 @@
         \end{center}
     \end{table}
 }
+
+% for English
+\sisetup{minimum-integer-digits=2}
+
+\renewcommand{\figurename}{Fig.}
+\renewcommand{\tablename}{Table.}
+
+%%\renewcommand{\prepartname}{第}
+%% \renewcommand{\postpartname}{部}
+%% \renewcommand{\contentsname}{目 次}
+%% \renewcommand{\listfigurename}{図 目 次}
+%% \renewcommand{\listtablename}{表 目 次}
+%% \renewcommand{\refname}{参考文献}
+%% \renewcommand{\indexname}{索 引}
+%% \renewcommand{\figurename}{図}
+%% \renewcommand{\tablename}{表}
+%% \renewcommand{\appendixname}{付 録}
+%% \renewcommand{\abstractname}{概 要}
