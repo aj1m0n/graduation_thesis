@@ -7,10 +7,10 @@
 
 ```sh
 # テンプレートブランチを clone
-git clone git@github.com:cpslab/graduation_thesis.git -b template/12fi
+git clone git@github.com:cpslab/graduation_thesis.git -b template/13fi --single-branch --depth=1
 
 # 自分ブランチを切る
-git checkout -b 12fi/hiro
+git checkout -b 13fi/myname
 
 # テンプレートファイルコピー
 cp syuron_format.tex hiro_thesis.tex
@@ -26,6 +26,6 @@ git checkout templates
 git commit
 
 # ブランチ作成
-git checkout -b template/12fi
+git checkout -b template/13fi
 
 ```
