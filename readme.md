@@ -5,9 +5,9 @@
 
 ## 自分の作業ブランチを作る
 
-```
-# その年のテンプレートがあるブランチへ
-git checkout template/12fi
+```sh
+# テンプレートブランチを clone
+git clone git@github.com:cpslab/graduation_thesis.git -b template/12fi
 
 # 自分ブランチを切る
 git checkout -b 12fi/hiro
@@ -18,7 +18,7 @@ cp syuron_format.tex hiro_thesis.tex
 
 ## 今年のテンプレートを作る
 
-```
+```sh
 # テンプレートブランチへ
 git checkout templates
 
