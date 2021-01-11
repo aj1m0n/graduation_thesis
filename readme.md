@@ -42,6 +42,7 @@ git checkout -b template/13fi
 - readme.md
 - [title.tex] 准教授→教授
 - [1_introduction.tex] 一行目 report → jreport
+- [style.sty] 英語表記から日本語表記に変更（コメントアウトで対応）
 - わかりづらさ回避のため、英語部分を削除しました。参照したい場合は、`template/13fi`ブランチへ。
   -  `8_conclusion.tex`のみ、日本語部分が見つからなかったためそのままにしてあります。
 
