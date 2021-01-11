@@ -94,10 +94,10 @@
   \end{figure}
 }
 
-%% \newcommand\figref[1]{(図~\ref{fig:#1})}
-%% \newcommand\tabref[1]{(表~\ref{tab:#1})}
-\newcommand\figref[1]{(fig~\ref{fig:#1})}
-\newcommand\tabref[1]{(table~\ref{tab:#1})}
+\newcommand\figref[1]{(図~\ref{fig:#1})}
+\newcommand\tabref[1]{(表~\ref{tab:#1})}
+%% \newcommand\figref[1]{(fig~\ref{fig:#1})}
+%% \newcommand\tabref[1]{(table~\ref{tab:#1})}
 
 \newcommand{\chapterhead}[2]{
     \stepcounter{chapter}%
@@ -106,8 +106,8 @@
 
     \begin{center}
         \vspace{0.5cm}
-        %% \huge{\bf 第{\thechapter}章}
-        \huge{\bf Chapter {\thechapter}}
+        \huge{\bf 第{\thechapter}章}
+        %% \huge{\bf Chapter {\thechapter}}
         \par
         \vspace{1cm}
         \hrulefill
@@ -126,8 +126,8 @@
         \end{flushleft}
     \end{center}
 
-    %%\addcontentsline{toc}{chapter}{\protect\numberline{第{\thechapter}章}{#1}}
-    \addcontentsline{toc}{chapter}{\protect\numberline{{\thechapter}}{#1}}
+    \addcontentsline{toc}{chapter}{\protect\numberline{第{\thechapter}章}{#1}}
+    %% \addcontentsline{toc}{chapter}{\protect\numberline{{\thechapter}}{#1}}
 
     \pagestyle{plain}
     % \cfoot{\thepage}
@@ -137,8 +137,8 @@
 
     \pagestyle{fancy}
     \lhead{}
-    %% \rhead{第{\thechapter}章 #1}
-    \rhead{Chapter {\thechapter} #1}
+    \rhead{第{\thechapter}章 #1}
+    %% \rhead{Chapter {\thechapter} #1}
 }
 
 \newcommand{\mytable}[3]{
