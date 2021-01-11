@@ -48,7 +48,7 @@ git checkout -b template/13fi
 
 WIP
 - .latexmkrcについて
-  - 環境構築済みの Overleaf で動作確認済
+  - ~~環境構築済みの Overleaf で動作確認済~~ overleaf環境構築を参照し、変更お願いします。
   - 現在の参照先:https://qiita.com/rainbartown/items/d7718f12d71e688f3573
 - `今年用のテンプレートを作る`
   - master をテンプレートブランチに改変して使用していくようにするなど、運用方法検討中
