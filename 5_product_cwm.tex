@@ -1,52 +1,35 @@
 %%%%%%%%%%%% ------------ chapter header ------------  %%%%%%%%%%%%
 \chapterhead
 % chapter title
-%% {モバイル端末センシングサーバAPI}
-{Mobile terminal sensing server API}
+{モバイル端末センシングサーバAPI}
+
 % chapter abstract
-%% {本章では，モバイル端末に付属のセンサで収集したデータのログを管理するためのサーバアプリケーションの作成について述べる}
-{In this chapter, describes the creation of the server application for managing the log of data collected by a sensor attached to the mobile terminal}
+{本章では，モバイル端末に付属のセンサで収集したデータのログを管理するためのサーバアプリケーションの作成について述べる}
+
 
 %%%%%%%%%%%% ------------ next page ------------  %%%%%%%%%%%%
 
-%% \section{背景と関連研究}
-%% 様々なセンサが付属するスマートフォンの普及を背景に，一般ユーザのスマートフォンを用いたセンシングの実現が期待されている\cite{usersencing}．
-%% 今回，複数の研究やプロジェクトでの使用と複数のユーザによるセンサ情報管理を目的とし，ユーザ参加型センシングを実現に必要であるサーバアプリケーション，Web API の作成と Web 画面での管理アプリケーションを作成した．
-\section{Background and related research}
-Against the background of the widespread use of smart phone that comes with a variety of sensors, the realization of sensing using a general user of the smartphone has been expected \cite{usersencing}.
-This time, the purpose of the sensor information management through the use and multiple users on multiple studies and projects, have created a need to achieve a user participatory sensing server application, a management application in the creation and Web screen of the Web API.
+\section{背景と関連研究}
+様々なセンサが付属するスマートフォンの普及を背景に，一般ユーザのスマートフォンを用いたセンシングの実現が期待されている\cite{usersencing}．
+今回，複数の研究やプロジェクトでの使用と複数のユーザによるセンサ情報管理を目的とし，ユーザ参加型センシングを実現に必要であるサーバアプリケーション，Web API の作成と Web 画面での管理アプリケーションを作成した．
 
-%% \section{システム概要}
-%% サーバに保存するデータ構造を\figref{datastructurew}のように定義した．今回は Project 別の管理を目的とし，Project と User は一対多とした．
-%% モバイル端末側のクライアントアプリケーションでは，「プロジェクトのユーザを作成し発行」と「ユーザのセンサ情報を追加」を行う 2つを用いることで単純なセンシングアプリケーションを作成する事ができる．
-%% 管理画面はシンプルな UI にし，ユーザ毎やプロジェクト単位でのデータエクスポートを管理画面から行えるようにした\figref{manageproject}\figref{manageuser}．収集したデータの分析のために CSV と KML のフォーマットでのエクスポート機能を実装した．KML は Google Earth や Google Maps でサポートされていて分析に有効である．Google Earth を用いた出力として\figref{kmlroute}と高度情報を表示した\figref{kmlheight}を示す．
-\section{System summary}
-Defining the data structure to be stored on the server as shown in \figref{datastructurew}. This is for the purpose of Project specific administration, Project and User was one-to-many.
-The mobile terminal of the client application, it is possible to create a simple sensing applications to use two to perform "Request to create a user of the project" and "Additional sensor information of the user".
-Management screen is a simple UI, was to allow the data export in the per-user or per-project basis from the management screen \figref{manageproject} \figref{manageuser}. Implementation of the export function in CSV and KML format for analysis of the collected data. KML is effective for the analysis have been supported by the Google Earth and Google Maps \figref{kmlroute}. And as an output using the Google Earth shows the displaying the altitude information \figref{kmlheight}.
+\section{システム概要}
+サーバに保存するデータ構造を\figref{datastructurew}のように定義した．今回は Project 別の管理を目的とし，Project と User は一対多とした．
+モバイル端末側のクライアントアプリケーションでは，「プロジェクトのユーザを作成し発行」と「ユーザのセンサ情報を追加」を行う 2つを用いることで単純なセンシングアプリケーションを作成する事ができる．
+管理画面はシンプルな UI にし，ユーザ毎やプロジェクト単位でのデータエクスポートを管理画面から行えるようにした\figref{manageproject}\figref{manageuser}．収集したデータの分析のために CSV と KML のフォーマットでのエクスポート機能を実装した．KML は Google Earth や Google Maps でサポートされていて分析に有効である．Google Earth を用いた出力として\figref{kmlroute}と高度情報を表示した\figref{kmlheight}を示す．
 
-%% % データ構造 Project-User-Logs
-%% \myfig{datastructurew.png}{サーバで扱うデータ構造}{datastructurew}
-%% 
-%% % 管理画面
-%% \myfig{manageproject.png}{プロジェクト一覧の管理画面}{manageproject}
-%% \myfig{manageuser.png}{データのダウンロードなどを行える User の管理画面}{manageuser}
-%% \vspace{-1cm}
-%% 
-%% %  Google Earth
-%% \myfigtwo{kmlroute.png}{Google Earth による可視化と分析}{kmlroute}
-%% {kmlheight.png}{高度情報の可視化}{kmlheight}
 % データ構造 Project-User-Logs
-\myfig{datastructurew.png}{Data structure to be handled by the server}{datastructurew}
+\myfig{datastructurew.png}{サーバで扱うデータ構造}{datastructurew}
 
 % 管理画面
-\myfig{manageproject.png}{Management screen of the project list}{manageproject}
-\myfig{manageuser.png}{User management screen that can perform such as downloading of data}{manageuser}
+\myfig{manageproject.png}{プロジェクト一覧の管理画面}{manageproject}
+\myfig{manageuser.png}{データのダウンロードなどを行える User の管理画面}{manageuser}
 \vspace{-1cm}
 
 %  Google Earth
-\myfigtwo{kmlroute.png}{Visualization by Google Earth and analysis}{kmlroute}
-{kmlheight.png}{Visualization of the altitude information}{kmlheight}
+\myfigtwo{kmlroute.png}{Google Earth による可視化と分析}{kmlroute}
+{kmlheight.png}{高度情報の可視化}{kmlheight}
+
 
 % 限界
 % 解明点
