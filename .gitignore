@@ -8,6 +8,7 @@
 *.fls
 *.out
 *.toc
+*.tmp*
 
 ## Intermediate documents:
 *.dvi
