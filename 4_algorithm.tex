@@ -1,64 +1,64 @@
-%%%%%%%%%%%% ------------ chapter header ------------  %%%%%%%%%%%%
-\chapterhead
-% chapter title
-{アルゴリズム}
-% chapter abstraction
-{本章では，システムで用いられているアルゴリズムの詳細について述べる．}
+% %%%%%%%%%%%% ------------ chapter header ------------  %%%%%%%%%%%%
+% \chapterhead
+% % chapter title
+% {アルゴリズム}
+% % chapter abstraction
+% {本章では，システムで用いられているアルゴリズムの詳細について述べる．}
 
-%付録へ
-%%%%%%%%%%%% ------------ next page ------------  %%%%%%%%%%%%
-\section{アルゴリズム概要}
-1章で述べたようにエッジセンサ側でSORT，クライアント側で射影変換を用いている．
+% %付録へ
+% %%%%%%%%%%%% ------------ next page ------------  %%%%%%%%%%%%
+% \section{アルゴリズム概要}
+% 1章で述べたようにエッジセンサ側でSORT，クライアント側で射影変換を用いている．
 
-\section{車両追跡}
-\subsection{SORTについて}
-検出器によって検出したバウンディングボックス（BBOX）の座標から，フレーム間の変位を線形モデルを用いて近似させる．
-各オブジェクトの状態は次のようにモデル化される．
-\begin{equation}
-  X = [u, v, s, r, \dot{u} , \dot{v} , \dot{s}]^T
-\end{equation}
-ここで，$u$と$v$はオブジェクトの中心の水平方向と垂直方向のピクセル位置を表し，$s$と$r$はそれぞれオブジェクトのBBOXの面積とアスペクト比を表す．
-ただしアスペクト比は一定とする．
-検出されたBBOXは，カルマンフィルタのフレームワークを用いて，速度成分が最適化されるオブジェクトの状態を更新するために用いられる．
-オブジェクトが検出されていない場合，線形モデルを用いて補正せずに，次の状態を単純に予測する．
+% \section{車両追跡}
+% \subsection{SORTについて}
+% 検出器によって検出したバウンディングボックス（BBOX）の座標から，フレーム間の変位を線形モデルを用いて近似させる．
+% 各オブジェクトの状態は次のようにモデル化される．
+% \begin{equation}
+%   X = [u, v, s, r, \dot{u} , \dot{v} , \dot{s}]^T
+% \end{equation}
+% ここで，$u$と$v$はオブジェクトの中心の水平方向と垂直方向のピクセル位置を表し，$s$と$r$はそれぞれオブジェクトのBBOXの面積とアスペクト比を表す．
+% ただしアスペクト比は一定とする．
+% 検出されたBBOXは，カルマンフィルタのフレームワークを用いて，速度成分が最適化されるオブジェクトの状態を更新するために用いられる．
+% オブジェクトが検出されていない場合，線形モデルを用いて補正せずに，次の状態を単純に予測する．
 
-\begin{figure}[!t]
-	\begin{algorithm}[H]
-	    \caption{SORT}
-	    \label{alg1}
-	    \begin{algorithmic}[1]
-	    \STATE 動画の読み込み
-	    \WHILE{}
-	    \STATE フレームの読み込み
-	    \STATE YOLOv4でオブジェクト探索
-	    \IF{Object is True}
+% \begin{figure}[!t]
+% 	\begin{algorithm}[H]
+% 	    \caption{SORT}
+% 	    \label{alg1}
+% 	    \begin{algorithmic}[1]
+% 	    \STATE 動画の読み込み
+% 	    \WHILE{}
+% 	    \STATE フレームの読み込み
+% 	    \STATE YOLOv4でオブジェクト探索
+% 	    \IF{Object is True}
 	    
-	    \STATE $X = [u, v, s, r, \dot{u} , \dot{v} , \dot{s}]^T$ 
-	    \STATE $kalmanfliter(X)$
-	    \ENDIF
-	    \ENDWHILE
-	    \end{algorithmic}
-	\end{algorithm}
-\end{figure}
+% 	    \STATE $X = [u, v, s, r, \dot{u} , \dot{v} , \dot{s}]^T$ 
+% 	    \STATE $kalmanfliter(X)$
+% 	    \ENDIF
+% 	    \ENDWHILE
+% 	    \end{algorithmic}
+% 	\end{algorithm}
+% \end{figure}
       
-      \subsection{射影変換}%底辺中点をなぜ選んだか
-      検出器によって検出したBBOXの底辺の中点$p$を射影変換し，地図上に投影する．
-      中点$p$は次式のようになる．
+%       \subsection{射影変換}%底辺中点をなぜ選んだか
+%       検出器によって検出したBBOXの底辺の中点$p$を射影変換し，地図上に投影する．
+%       中点$p$は次式のようになる．
 
-      \begin{equation}
-  p = [x, y, 1]^T, P = [X, Y, 1]^T
-\end{equation}
-\begin{equation}
-  P' = [X', Y', W']^T = Hp
-\end{equation}
-\begin{equation}
-  P = \frac{1}{W'}P'
-\end{equation}
-ここで，$P$は地図上の座標を表ている．$x$,$y$は画像の座標を表しており，$H$はホモグラフィ行列を表す．
+%       \begin{equation}
+%   p = [x, y, 1]^T, P = [X, Y, 1]^T
+% \end{equation}
+% \begin{equation}
+%   P' = [X', Y', W']^T = Hp
+% \end{equation}
+% \begin{equation}
+%   P = \frac{1}{W'}P'
+% \end{equation}
+% ここで，$P$は地図上の座標を表ている．$x$,$y$は画像の座標を表しており，$H$はホモグラフィ行列を表す．
 
-\section{車両の右左折待ち}
+% \section{車両の右左折待ち}
 
-\section{オクルージョンの解決}
+% \section{オクルージョンの解決}
 
 
-\newpage
+% \newpage
